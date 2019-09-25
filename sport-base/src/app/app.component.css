@@ -1,0 +1,17 @@
+p {
+  margin: 0;
+}
+
+.toolbar {
+  height: 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
+
+.angularLogo {
+  margin: 0 1em;
+}
