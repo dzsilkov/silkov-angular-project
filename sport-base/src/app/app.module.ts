@@ -13,11 +13,12 @@ import { NotFoundComponent } from './sb-not-found/not-found.component';
 import { BaseCatalogComponent } from "./base-catalog/containers/base-catalog/base-catalog.component";
 import { ArticlesCatalogComponent } from './articles-catalog/containers/articles-catalog/articles-catalog.component';
 import { ArticleCardComponent } from './articles-catalog/components/article-card/article-card.component';
+import { BaseDescriptionComponent } from './base-catalog/containers/base-description/base-description.component';
 
 
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
-  { path: 'catalog', component: BaseCatalogComponent },
+  // { path: 'catalog', component: BaseCatalogComponent },
   { path: 'articles', component: ArticlesCatalogComponent },
   { path: '**', component: NotFoundComponent }
 ];
@@ -29,6 +30,7 @@ const appRoutes: Routes =[
     NotFoundComponent,
     ArticlesCatalogComponent,
     ArticleCardComponent,
+    BaseDescriptionComponent,
   ],
 
   imports: [
