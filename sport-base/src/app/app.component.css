@@ -1,36 +1,21 @@
-p {
-  margin: 0;
-}
-
-.toolbar {
-  height: 4em;
+#container {
+  font-size: 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1976d2;
-  color: white;
-  font-weight: 600;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: 80em;
+  margin: auto;
+}
+.content {
+  flex: 1 0 auto;
+  background-color: yellowgreen;
 }
 
-.angularLogo {
-  margin: 0 1em;
+app-footer {
+  flex: 0 0 auto;
+  background-image: url("./../assets/sb-footer-bg.jpg");
 }
 
-.nav {
-  margin: 0 0 10px;
-  padding: 0 0 20px;
-  border-bottom: 1px solid #dce5f2;
-}
-
-nav a {
-  background: #3a4250;
-  color: #fff;
-  padding: 4px 10px;
-  margin: 0 2px;
-  border-radius: 2px;
-}
-
-nav a.active {
-  color: #b690f1;
-  background: #363c48;
+app-header {
+  flex: 0 0 auto;
 }

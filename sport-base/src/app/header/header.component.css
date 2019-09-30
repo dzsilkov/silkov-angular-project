@@ -1,0 +1,14 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #1976d9;
+  color: white;
+  font-weight: 600;
+  padding: 1em;
+}
+
+.angularLogo {
+  margin: 0 1em;
+}

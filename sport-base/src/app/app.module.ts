@@ -10,16 +10,21 @@ import { BaseCatalogModule } from "./base-catalog/base-catalog-module";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './sb-home/home.component';
 import { NotFoundComponent } from './sb-not-found/not-found.component';
-import { BaseCatalogComponent } from "./base-catalog/containers/base-catalog/base-catalog.component";
 import { ArticlesCatalogComponent } from './articles-catalog/containers/articles-catalog/articles-catalog.component';
 import { ArticleCardComponent } from './articles-catalog/components/article-card/article-card.component';
 import { BaseDescriptionComponent } from './base-catalog/containers/base-description/base-description.component';
+import { ContactsComponent } from "./contacts/contacts.component";
+import { AddBaseComponent } from './add-base/add-base.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
-  // { path: 'catalog', component: BaseCatalogComponent },
   { path: 'articles', component: ArticlesCatalogComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'add-base', component: AddBaseComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -31,6 +36,11 @@ const appRoutes: Routes =[
     ArticlesCatalogComponent,
     ArticleCardComponent,
     BaseDescriptionComponent,
+    ContactsComponent,
+    AddBaseComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavigationComponent
   ],
 
   imports: [
