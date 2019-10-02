@@ -1,16 +1,15 @@
 <div class="wrapper">
-  <div class="card-header">
-    <div class="card-image">
-      <h3>{{article.title}}</h3>
+  <div class="article-card-image">
+    <div class="card-image"></div>
+  </div>
+  <div class="article-card-content">
+    <h3>{{article.title}}<span>{{article.date}}</span></h3>
+    <div class="article-card-description">Статья...</div>
+    <div class="card-actions">
+      <button [routerLink]="article.id">Подробнее</button>
     </div>
   </div>
-  <div class="card-content">
-    <a href="">{{article.date}}</a>
-    <a href=""></a>
-    <h3 class="card-title">{{name}}</h3>
-    <p class="sports">{{sports}}</p>
-  </div>
-  <div class="card-actions">
-    <a href="">Подробнее</a>
-  </div>
 </div>
+
+
+

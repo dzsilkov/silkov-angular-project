@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import {map, catchError, tap} from 'rxjs/operators';
 
 import { SportBase } from './../models/sport-base';
+import {log} from "util";
 
 const SPORTBASE_API: string = '/api/bases';
 

@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 
 import { BaseCatalogComponent } from "./containers/base-catalog/base-catalog.component";
-import { BaseDescriptionComponent } from "./containers/base-description/base-description.component";
+import { BaseDescriptionComponent } from "./components/base-description/base-description.component";
 
 import { BaseCatalogCardComponent } from "./components/base-catalog-card/base-catalog-card.component";
 import { BaseCatalogService } from "./services/base-catalog.service";
@@ -22,7 +22,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     BaseCatalogComponent,
-    BaseCatalogCardComponent
+    BaseCatalogCardComponent,
+    BaseDescriptionComponent
   ],
 
   imports: [

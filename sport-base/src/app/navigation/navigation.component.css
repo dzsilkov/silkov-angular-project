@@ -7,11 +7,11 @@ nav a {
   background: #3a4250;
   color: #fff;
   padding: .5em 2.5em;
-  border-radius: 2px;
+  border-radius: .2em;
   margin: 0 .5em;
 }
 
 nav a.active {
-  color: #b690f1;
+  color: tomato;
   background: #363c48;
 }

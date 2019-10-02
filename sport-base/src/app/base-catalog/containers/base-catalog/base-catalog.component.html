@@ -1,5 +1,9 @@
-
-<div *ngFor="let base of bases">
-  <app-base-catalog-card [sportBase]="base"></app-base-catalog-card>
-</div>
+<section>
+  <h2 class="catalog-title">Каталог</h2>
+  <div class="catalog">
+    <div *ngFor="let base of bases">
+      <app-base-catalog-card [sportBase]="base"></app-base-catalog-card>
+    </div>
+  </div>
+</section>
 

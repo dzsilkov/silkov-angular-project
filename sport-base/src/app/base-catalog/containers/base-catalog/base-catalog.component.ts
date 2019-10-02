@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SportBase} from "../../models/sport-base";
 import {BaseCatalogService} from "../../services/base-catalog.service";
+
 
 @Component({
   selector: 'app-base-catalog',

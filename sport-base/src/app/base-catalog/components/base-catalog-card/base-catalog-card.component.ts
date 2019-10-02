@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {SportBase} from "../../models/sport-base";
 
 @Component({
@@ -12,9 +12,15 @@ export class BaseCatalogCardComponent implements OnInit {
 @Input()
 sportBase: SportBase;
 
+@Output() open: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  baseDescription() {
+    this.open.emit(this.sportBase.id);
+    console.log(this.sportBase.id);
+  }
 }

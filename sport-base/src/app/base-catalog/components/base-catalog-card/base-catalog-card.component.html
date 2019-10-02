@@ -1,8 +1,7 @@
 <div class="wrapper">
   <div class="card-header">
-    <div class="card-image">
-      <h3>{{sportBase.name}}</h3>
-    </div>
+    <div class="card-image"></div>
+    <h3>{{sportBase.name}}</h3>
   </div>
   <div class="card-content">
     <a href="">{{sportBase.country}}</a>
@@ -11,6 +10,6 @@
     <p class="sports">{{sports}}</p>
   </div>
   <div class="card-actions">
-    <a href="">Подробнее</a>
+    <button [routerLink]="sportBase.id">Подробнее</button>
   </div>
 </div>
