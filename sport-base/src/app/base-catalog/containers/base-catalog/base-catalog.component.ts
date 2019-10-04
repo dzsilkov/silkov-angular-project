@@ -19,4 +19,6 @@ export class BaseCatalogComponent implements OnInit {
       .subscribe((data: SportBase[]) => this.bases = data);
     console.log(this.bases)
   }
+
+
 }

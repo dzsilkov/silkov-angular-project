@@ -8,12 +8,12 @@
 }
 .content {
   flex: 1 0 auto;
-  background-color: yellowgreen;
+  background-color: darkgoldenrod;
 }
 
 app-footer {
   flex: 0 0 auto;
-  background-image: url("./../assets/sb-footer-bg.jpg");
+
 }
 
 app-header {

@@ -12,15 +12,9 @@ export class BaseCatalogCardComponent implements OnInit {
 @Input()
 sportBase: SportBase;
 
-@Output() open: EventEmitter<any> = new EventEmitter();
-
   constructor() { }
 
   ngOnInit() {
   }
 
-  baseDescription() {
-    this.open.emit(this.sportBase.id);
-    console.log(this.sportBase.id);
-  }
 }

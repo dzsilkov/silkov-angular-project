@@ -5,6 +5,8 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { BaseCatalogComponent } from "./containers/base-catalog/base-catalog.component";
 import { BaseDescriptionComponent } from "./components/base-description/base-description.component";
+import { TitleComponent } from '../title/title.component';
+
 
 import { BaseCatalogCardComponent } from "./components/base-catalog-card/base-catalog-card.component";
 import { BaseCatalogService } from "./services/base-catalog.service";
@@ -13,7 +15,7 @@ const routes: Routes = [
   {
     path: 'catalog',
     children: [
-      { path: '', component: BaseCatalogComponent },
+      { path: '', component: BaseCatalogComponent, data: { bc: 'Каталог' }},
       { path: ':id', component: BaseDescriptionComponent }
     ]
   }
@@ -23,7 +25,8 @@ const routes: Routes = [
   declarations: [
     BaseCatalogComponent,
     BaseCatalogCardComponent,
-    BaseDescriptionComponent
+    BaseDescriptionComponent,
+    TitleComponent
   ],
 
   imports: [
@@ -33,6 +36,7 @@ const routes: Routes = [
 
   exports: [
     BaseCatalogComponent,
+    TitleComponent
   ],
 
   providers: [

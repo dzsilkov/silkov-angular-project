@@ -1,15 +1,10 @@
-<div class="wrapper">
-  <div class="article-card-image">
-    <div class="card-image"></div>
+<div class="article-card__item">
+  <div class="article-card__image">
+    <img class="card-image" [src]="article.logo">
   </div>
-  <div class="article-card-content">
-    <h3>{{article.title}}<span>{{article.date}}</span></h3>
-    <div class="article-card-description">Статья...</div>
-    <div class="card-actions">
-      <button [routerLink]="article.id">Подробнее</button>
-    </div>
+  <div class="article-card__content">
+    <h3><span>{{article.date | date}}</span>{{article.title}}</h3>
+    <div class="article-card__text">{{article.description}}</div>
+    <button class="article-card__actions" [routerLink]="article.id">Подробнее</button>
   </div>
 </div>
-
-
-

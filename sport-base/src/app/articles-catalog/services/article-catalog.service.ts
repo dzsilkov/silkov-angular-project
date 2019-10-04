@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 
-import { Article } from './../models/article';
+import { Article } from '../models/article';
 import {SportBase} from "../../base-catalog/models/sport-base";
 
 const ARTICLE_API: string = '/api/articles';

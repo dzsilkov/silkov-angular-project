@@ -12,6 +12,8 @@ import {ArticleCatalogService} from "../../services/article-catalog.service";
 export class ArticlesCatalogComponent implements OnInit {
 
   articles: Article[];
+  title: string = 'Статьи';
+
   constructor(private articleService: ArticleCatalogService) { }
 
   ngOnInit() {

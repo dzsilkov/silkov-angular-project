@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptor } from './http.interceptor';
@@ -19,19 +20,21 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ArticleComponent } from './articles-catalog/components/article/article.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+// import { TitleComponent } from './title/title.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: HomeComponent, data: { bc: 'Главная' }},
   {
     path: 'articles',
     children: [
-      {path: '', component: ArticlesCatalogComponent},
-      {path: ':id', component: ArticleComponent}
+      {path: '', component: ArticlesCatalogComponent, data: { bc: 'Статьи' }},
+      {path: ':id', component: ArticleComponent, data: {bc: ':id'}}
     ]
   },
-  {path: 'contacts', component: ContactsComponent},
-  {path: 'add-base', component: AddBaseComponent},
+  {path: 'contacts', component: ContactsComponent, data: { bc: 'Контакты' }},
+  {path: 'add-base', component: AddBaseComponent, data: { bc: 'Добавить базу' }},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -48,14 +51,21 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    ArticleComponent
+    ArticleComponent,
+    BreadcrumbComponent,
+    // TitleComponent
   ],
 
   imports: [
     BrowserModule,
+    CommonModule,
     BaseCatalogModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule
+  ],
+
+  exports: [
+    // TitleComponent
   ],
 
   providers: [
