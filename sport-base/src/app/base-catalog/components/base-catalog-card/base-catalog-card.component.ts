@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {SportBase} from "../../models/sport-base";
+import { Component, OnInit, Input } from '@angular/core';
+import {SportBase} from '../../models/sport-base';
 
 @Component({
   selector: 'app-base-catalog-card',
@@ -10,7 +10,7 @@ import {SportBase} from "../../models/sport-base";
 export class BaseCatalogCardComponent implements OnInit {
 
 @Input()
-sportBase: SportBase;
+private sportBase: SportBase;
 
   constructor() { }
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 interface Nav {
-  link: string,
-  name: string,
-  exact: boolean
+  link: string;
+  name: string;
+  exact: boolean;
 }
 
 @Component({
@@ -34,11 +34,11 @@ export class NavigationComponent implements OnInit {
       name: 'Контакты',
       exact: true
     },
-    {
-      link: '/add-base',
-      name: 'Добавить базу',
-      exact: false
-    }
+    // {
+    //   link: '/add-base',
+    //   name: 'Добавить базу',
+    //   exact: false
+    // }
   ];
   constructor() { }
 

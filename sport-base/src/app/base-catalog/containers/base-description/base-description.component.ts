@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {switchMap, tap} from 'rxjs/operators';
 
-import {BaseCatalogService} from "../../services/base-catalog.service";
-import {SportBase} from "../../models/sport-base";
+import {BaseCatalogService} from '../../services/base-catalog.service';
+import {SportBase} from '../../models/sport-base';
 
 
 @Component({
@@ -14,9 +14,7 @@ import {SportBase} from "../../models/sport-base";
 
 export class BaseDescriptionComponent implements OnInit {
 
-  base: SportBase;
-
-
+  public sportBase: SportBase;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -29,7 +27,8 @@ export class BaseDescriptionComponent implements OnInit {
         switchMap((params: any) => this.baseCatalogService.getBase(+params.get('id'))),
         tap(console.log)
       )
-      .subscribe((data: SportBase) => this.base = data[0]);
+      .subscribe((data: SportBase) => this.sportBase = data[0]);
+    console.log(this.sportBase);
   }
 
 }

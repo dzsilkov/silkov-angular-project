@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Article} from "../../models/article";
-import {ArticleCatalogService} from "../../services/article-catalog.service";
+import {Article} from '../../models/article';
+import {ArticleCatalogService} from '../../services/article-catalog.service';
 
 @Component({
   selector: 'app-articles-catalog',
@@ -12,13 +12,13 @@ import {ArticleCatalogService} from "../../services/article-catalog.service";
 export class ArticlesCatalogComponent implements OnInit {
 
   articles: Article[];
-  title: string = 'Статьи';
+  title = 'Статьи';
 
-  constructor(private articleService: ArticleCatalogService) { }
+  constructor(private articleService: ArticleCatalogService) {}
 
   ngOnInit() {
     this.articleService.getArticles()
       .subscribe((data: Article[]) => this.articles = data);
-    console.log(this.articles)
+    console.log(this.articles);
   }
 }

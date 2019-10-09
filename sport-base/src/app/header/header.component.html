@@ -1,13 +1,38 @@
-<div class="toolbar">
-  <img class="angularLogo"
-       width="200"
-       alt="Angular Logo"
-       src="../../assets/image/logo/sb-logo.svg"
-  />
-  <span>{{title}}</span>
-  <img class="angularLogo"
-       width="40"
-       alt="Angular Logo"
-       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
-</div>
+<section class="header-toolbar">
+  <div class="toolbar-layout">
+    <div class="toolbar-logo">
+      <img class="sportBaseLogo"
+           width="240"
+           alt="ROSSPORT"
+           src="../../assets/image/logo/header-logo.svg"
+      />
+    </div>
+    <div class="toolbar-links">
+      <app-navigation></app-navigation>
+    </div>
+    <div class="toolbar-actions">
+      <ul class="toolbar-actions-items">
+        <li>sign up</li>
+        <li>log in</li>
+        <li>
+          <img class="searchLogo"
+                 width="32"
+                 alt="search"
+                 src="../../assets/image/logo/search.svg"
+        />
+        </li>
+        <li>
+          <img class="addLogo"
+                 width="34"
+                 alt="add"
+                 src="../../assets/image/logo/add.svg"
+        />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="header-outlet">
+  <app-form-search></app-form-search>
+</section>
+

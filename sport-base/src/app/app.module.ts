@@ -1,77 +1,69 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpInterceptor } from './http.interceptor';
+import { BackendInterceptor } from './back-end/back-end.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
-import { BaseCatalogModule } from "./base-catalog/base-catalog-module";
+import { BaseCatalogModule } from './base-catalog/base-catalog-module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './sb-home/home.component';
-import { NotFoundComponent } from './sb-not-found/not-found.component';
-import { ArticlesCatalogComponent } from './articles-catalog/containers/articles-catalog/articles-catalog.component';
-import { ArticleCardComponent } from './articles-catalog/components/article-card/article-card.component';
-// import { BaseDescriptionComponent } from './base-catalog/containers/base-description/base-description.component';
-import { ContactsComponent } from "./contacts/contacts.component";
+import { HomeComponent } from './home/home.component';
+import { ContactsComponent } from './contacts/contacts.component';
 import { AddBaseComponent } from './add-base/add-base.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { ArticleComponent } from './articles-catalog/components/article/article.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-// import { TitleComponent } from './title/title.component';
+import { ArticlesCatalogModule } from './articles-catalog/articles-catalog.module';
+import { SliderModule } from './slider/slider.module';
+import { TitleComponent } from './title/title.component';
+import { FormSearchComponent } from './form-search/form-search.component';
+import { FormInputComponent } from './form-search/components/form-input/form-input.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { bc: 'Главная' }},
-  {
-    path: 'articles',
-    children: [
-      {path: '', component: ArticlesCatalogComponent, data: { bc: 'Статьи' }},
-      {path: ':id', component: ArticleComponent, data: {bc: ':id'}}
-    ]
-  },
   {path: 'contacts', component: ContactsComponent, data: { bc: 'Контакты' }},
   {path: 'add-base', component: AddBaseComponent, data: { bc: 'Добавить базу' }},
-  {path: '**', component: NotFoundComponent}
+  {path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent,
-    ArticlesCatalogComponent,
-    ArticleCardComponent,
-    // BaseDescriptionComponent,
     ContactsComponent,
     AddBaseComponent,
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    ArticleComponent,
     BreadcrumbComponent,
-    // TitleComponent
+    TitleComponent,
+    FormSearchComponent,
+    FormInputComponent,
   ],
 
   imports: [
     BrowserModule,
     CommonModule,
     BaseCatalogModule,
+    ArticlesCatalogModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    SliderModule,
+    ReactiveFormsModule
   ],
 
   exports: [
-    // TitleComponent
   ],
 
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: HttpInterceptor,
+      useClass: BackendInterceptor,
       multi: true
     }
   ],

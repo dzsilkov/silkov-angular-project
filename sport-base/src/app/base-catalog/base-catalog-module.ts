@@ -1,22 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 
 
-import { BaseCatalogComponent } from "./containers/base-catalog/base-catalog.component";
-import { BaseDescriptionComponent } from "./components/base-description/base-description.component";
-import { TitleComponent } from '../title/title.component';
-
-
-import { BaseCatalogCardComponent } from "./components/base-catalog-card/base-catalog-card.component";
-import { BaseCatalogService } from "./services/base-catalog.service";
+import { BaseCatalogComponent } from './containers/base-catalog/base-catalog.component';
+import { BaseDescriptionComponent } from './containers/base-description/base-description.component';
+import { BaseCatalogCardComponent } from './components/base-catalog-card/base-catalog-card.component';
+import {BaseCatalogService} from './services/base-catalog.service';
+import {BaseCatalogResolve} from './containers/base-catalog/base-catalog.resolve';
+import {BaseDescriptionResolve} from './containers/base-description/base-description.resolve';
 
 const routes: Routes = [
   {
     path: 'catalog',
     children: [
-      { path: '', component: BaseCatalogComponent, data: { bc: 'Каталог' }},
-      { path: ':id', component: BaseDescriptionComponent }
+      {
+        path: '',
+        component: BaseCatalogComponent,
+        data: {bc: 'Каталог'},
+        resolve: {
+          base: BaseCatalogResolve
+        }
+      },
+      {
+        path: ':id',
+        component: BaseDescriptionComponent,
+        data: {bc: 'Каталог'},
+      },
     ]
   }
 ];
@@ -26,7 +36,6 @@ const routes: Routes = [
     BaseCatalogComponent,
     BaseCatalogCardComponent,
     BaseDescriptionComponent,
-    TitleComponent
   ],
 
   imports: [
@@ -36,11 +45,12 @@ const routes: Routes = [
 
   exports: [
     BaseCatalogComponent,
-    TitleComponent
   ],
 
   providers: [
-    BaseCatalogService
+    BaseCatalogService,
+    BaseCatalogResolve,
+    BaseDescriptionResolve
   ]
 })
 export class BaseCatalogModule { }

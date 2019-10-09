@@ -1,14 +1,45 @@
-.toolbar {
+.header-toolbar {
+  font-size: 1rem;
+  background-color: black;
+}
+
+.toolbar-layout {
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  background-color: #1976d9;
-  color: white;
-  font-weight: 600;
-  padding: 1em;
+  margin: 0 3em;
+  border-bottom: 1px solid gray;
 }
 
-.angularLogo {
-  margin: 0 1em;
+.toolbar-actions {
+  color: white;
+}
+
+.toolbar-actions-items {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.toolbar-actions-items li {
+  font-weight: 600;
+  padding: 1em .6em .1em .6em;
+  color: white;
+  cursor: pointer;
+  border-bottom: 2px solid black;
+
+}
+
+.toolbar-actions-items li:hover,
+.toolbar-actions-items li:active {
+  border-bottom: 2px solid gold;
+}
+
+.header-outlet {
+  background-color: black;
+  height: 10vh;
 }
