@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-form-search',
@@ -7,16 +7,18 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   styleUrls: ['./form-search.component.css']
 })
 export class FormSearchComponent implements OnInit {
-  form: FormGroup = this.formBuilder.group({
-    store: this.formBuilder.group({
-      projectStatus: ['']
-    }),
+  form = new FormGroup({
+    searchValue: new FormControl(''),
   });
-  constructor(
-    private formBuilder: FormBuilder
-  ) { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    console.log('Submit:', this.form.value);
+    this.form.reset();
+  }
 }

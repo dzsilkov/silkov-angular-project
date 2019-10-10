@@ -1,6 +1,8 @@
-<label for="searchInput"></label>
-<input
-  type="text"
-  name="searchInput"
-  id="searchInput"
->
+<div [formGroup]="parent">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="найти базу"
+    formControlName="searchValue">
+  >
+</div>

@@ -1,8 +1,6 @@
 <div class="search">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <app-form-input>
-      [parent]="form">
-    </app-form-input>
+    <app-form-input [parent]="form"></app-form-input>
     <div class="form-submit-button">
       <button
         type="submit"
@@ -10,6 +8,5 @@
         поиск
       </button>
     </div>
-    <pre>{{ form.value | json }}</pre>
   </form>
 </div>
