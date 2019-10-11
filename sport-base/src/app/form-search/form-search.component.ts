@@ -20,7 +20,6 @@ export class FormSearchComponent implements OnInit {
   ngOnInit() {
     this.searchChange();
   }
-  
   searchChange() {
     // const searchValue = this.form.get('searchValue');
     //

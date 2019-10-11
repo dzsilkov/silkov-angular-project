@@ -22,6 +22,11 @@ import { SliderModule } from './slider/slider.module';
 import { TitleComponent } from './title/title.component';
 import { FormSearchComponent } from './form-search/form-search.component';
 import { FormInputComponent } from './form-search/components/form-input/form-input.component';
+import { AddBaseNameComponent } from './add-base/add-base-form/components/add-base-name/add-base-name.component';
+import { AddBaseMailComponent } from './add-base/add-base-form/components/add-base-mail/add-base-mail.component';
+import { AddBasePhoneComponent } from './add-base/add-base-form/components/add-base-phone/add-base-phone.component';
+import { AddBaseDescriptionComponent } from './add-base/add-base-form/components/add-base-description/add-base-description.component';
+import {AddBaseFormComponent} from './add-base/add-base-form/containers/add-base-form/add-base-form.component';
 
 
 const appRoutes: Routes = [
@@ -44,6 +49,11 @@ const appRoutes: Routes = [
     TitleComponent,
     FormSearchComponent,
     FormInputComponent,
+    AddBaseFormComponent,
+    AddBaseNameComponent,
+    AddBaseMailComponent,
+    AddBasePhoneComponent,
+    AddBaseDescriptionComponent,
   ],
 
   imports: [
