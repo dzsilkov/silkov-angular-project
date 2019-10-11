@@ -1,12 +1,9 @@
-<div class="search">
+<div class="search"
+*ngIf="show">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <app-form-input [parent]="form"></app-form-input>
     <div class="form-submit-button">
-      <button
-        type="submit"
-        [disabled]="form.invalid">
-        поиск
-      </button>
+      <input type="submit" value="Найти">
     </div>
   </form>
 </div>

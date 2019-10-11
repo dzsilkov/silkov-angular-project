@@ -3,6 +3,5 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .5em;
-
+  padding: 2em 1em 1.5em;
 }

@@ -6,7 +6,7 @@ import { SportBase } from '../../models/sport-base';
 import {BaseCatalogService} from '../../services/base-catalog.service';
 
 @Injectable()
-export class BaseDescriptionResolve implements Resolve<SportBase[]> {
+class BaseDescriptionResolve implements Resolve<SportBase[]> {
   constructor(private baseService: BaseCatalogService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {

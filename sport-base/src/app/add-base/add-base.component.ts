@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-add-base',
@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-base.component.css']
 })
 export class AddBaseComponent implements OnInit {
-
-  title: string = 'Добавить спортивную базу';
+  @Input()
+ show;
+  title = 'Добавить спортивную базу';
   constructor() { }
 
   ngOnInit() {

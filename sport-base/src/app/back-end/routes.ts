@@ -16,7 +16,7 @@ export function getBaseById(baseId: number) {
 }
 
 export function getArticles() {
-  return ok<Article[]>(articles);
+  return ok(articles);
 }
 
 export function getArticle(articleId: number) {

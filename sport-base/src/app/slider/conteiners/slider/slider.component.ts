@@ -33,7 +33,6 @@ slide = '\'./../../../assets/slider-4.jpg\'';
 currentSlide = 0;
 
 @Output() dataToChild = new EventEmitter<string>();
-  interval: any;
   constructor() { }
 
   ngOnInit() {
@@ -43,7 +42,7 @@ currentSlide = 0;
   faredSlide() {
     setInterval(() => {
       this.dataToChild.emit(this.slides[this.currentSlide]);
-      console.log(this.slides[this.currentSlide]);
+      // console.log(this.slides[this.currentSlide]);
       this.currentSlide++;
       if (this.currentSlide >= this.slides.length) { this.currentSlide = 0; }
       this.slide = this.slides[this.currentSlide];

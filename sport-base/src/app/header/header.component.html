@@ -12,18 +12,18 @@
     </div>
     <div class="toolbar-actions">
       <ul class="toolbar-actions-items">
-        <li>sign up</li>
-        <li>log in</li>
-        <li>
+        <li (click)="signUpUser()">sign up</li>
+        <li (click)="logInUser()">log in</li>
+        <li (click)="searchInputToggle($event)">
           <img class="searchLogo"
-                 width="32"
+                 width="28"
                  alt="search"
                  src="../../assets/image/logo/search.svg"
         />
         </li>
-        <li>
+        <li (click)="addBaseToggle($event)">
           <img class="addLogo"
-                 width="34"
+                 width="30"
                  alt="add"
                  src="../../assets/image/logo/add.svg"
         />
@@ -33,6 +33,7 @@
   </div>
 </section>
 <section class="header-outlet">
-  <app-form-search></app-form-search>
+  <app-form-search [show]="searchShow"></app-form-search>
+  <app-add-base [show]="addBaseShow"></app-add-base>
 </section>
 

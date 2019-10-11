@@ -8,7 +8,7 @@ import { BaseDescriptionComponent } from './containers/base-description/base-des
 import { BaseCatalogCardComponent } from './components/base-catalog-card/base-catalog-card.component';
 import {BaseCatalogService} from './services/base-catalog.service';
 import {BaseCatalogResolve} from './containers/base-catalog/base-catalog.resolve';
-import {BaseDescriptionResolve} from './containers/base-description/base-description.resolve';
+// import {BaseDescriptionResolve} from './containers/base-description/base-description.resolve';
 
 const routes: Routes = [
   {
@@ -50,7 +50,7 @@ const routes: Routes = [
   providers: [
     BaseCatalogService,
     BaseCatalogResolve,
-    BaseDescriptionResolve
+    // BaseDescriptionResolve
   ]
 })
 export class BaseCatalogModule { }

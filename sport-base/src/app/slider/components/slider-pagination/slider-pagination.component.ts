@@ -13,5 +13,7 @@ export class SliderPaginationComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  goToSlide(slide, i) {
+    console.log(slide, i);
+  }
 }

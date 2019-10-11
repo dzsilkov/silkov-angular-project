@@ -20,7 +20,7 @@
 }
 
 .nav-container li:hover {
-  border-bottom: 2px solid gold;
+  border-bottom: 1px solid gold;
 }
 
 .nav-container {

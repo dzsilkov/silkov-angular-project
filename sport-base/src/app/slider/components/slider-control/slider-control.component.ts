@@ -7,7 +7,7 @@ import {Input} from '@angular/compiler/src/core';
   styleUrls: ['./slider-control.component.css']
 })
 export class SliderControlComponent implements OnInit {
-@Input()
+
 
   constructor() { }
   ngOnInit() {
