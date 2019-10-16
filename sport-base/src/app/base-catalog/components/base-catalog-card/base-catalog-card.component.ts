@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {SportBase} from '../../models/sport-base';
+import {SportBase} from '../../../models/sport-base';
 
 @Component({
   selector: 'app-base-catalog-card',

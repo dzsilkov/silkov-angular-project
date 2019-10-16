@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {SportBase} from '../../models/sport-base';
+import {SportBase} from '../../../models/sport-base';
 import {BaseCatalogService} from '../../services/base-catalog.service';
 import {delay, tap} from 'rxjs/operators';
 

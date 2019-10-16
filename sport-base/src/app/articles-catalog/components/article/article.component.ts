@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 
 import {ArticleCatalogService} from "../../services/article-catalog.service";
-import {SportBase} from "../../../base-catalog/models/sport-base";
+import {SportBase} from "../../../models/sport-base";
 import {switchMap, tap} from "rxjs/operators";
 import {Article} from "../../models/article";
 

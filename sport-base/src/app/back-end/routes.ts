@@ -2,7 +2,7 @@ import { ok } from './helpers';
 
 import { sportBases } from './data/sport-bases/sportBases';
 import { articles } from './data/articles/articles';
-import {SportBase} from '../base-catalog/models/sport-base';
+import {SportBase} from '../models/sport-base';
 import {Article} from '../articles-catalog/models/article';
 
 

@@ -2,6 +2,54 @@ form {
   font-size: 1rem;
   display: flex;
   justify-content: center;
+  flex-flow: row wrap;
   align-items: center;
   padding: 2em 1em 1.5em;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1.8em;
+  min-width: 20em;
+  outline: none;
+  color: white;
+  border: none;
+  margin: .5em 3em;
+  padding: .5em;
+  border-bottom: 2px solid gray;
+  background: transparent;
+  flex: 1 1 auto;
+}
+
+input::placeholder {
+  color: gray;
+  font-size: 1rem;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+button {
+  margin: .5em 3em;
+  font-size: 1rem;
+  color: white;
+  font-weight: 400;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: .8em;
+  padding: .6em;
+  text-transform: lowercase;
+  cursor: pointer;
+  min-width: 16em;
+  outline: none;
+  text-align: center;
+  transition: all 0.18s ease-in-out;
+  display: block;
+  flex: 1 1 auto;
+}
+
+button:hover {
+  color: white;
+  background: #333;
 }

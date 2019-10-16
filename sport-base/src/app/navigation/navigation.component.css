@@ -4,15 +4,15 @@
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  line-height: 4em;
-  padding: .1em 1em;
+  line-height: 3.6em;
+  padding: 0 1em;
   border-bottom: 2px solid black;
   outline: none;
   cursor: pointer;
 }
 
 .nav-container {
-  padding-bottom: .1em;
+  margin-bottom: .8em;
 }
 
 .nav-container li.active {
@@ -20,11 +20,13 @@
 }
 
 .nav-container li:hover {
-  border-bottom: 1px solid gold;
+  border-bottom: 2px solid gold;
 }
 
 .nav-container {
   background-color: black;
   display: flex;
   justify-content: center;
+  align-content: center;
+  flex-flow: row wrap;
 }

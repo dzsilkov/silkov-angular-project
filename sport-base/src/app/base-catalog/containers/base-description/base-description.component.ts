@@ -3,7 +3,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 import {switchMap, tap} from 'rxjs/operators';
 
 import {BaseCatalogService} from '../../services/base-catalog.service';
-import {SportBase} from '../../models/sport-base';
+import {SportBase} from '../../../models/sport-base';
 
 
 @Component({

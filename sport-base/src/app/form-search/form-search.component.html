@@ -1,10 +1,18 @@
 <div class="search"
-*ngIf="show">
+     *ngIf="show">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <app-form-input [parent]="form">
-    </app-form-input>
+    <input
+      autocomplete="off"
+      type="search"
+      id="searchInput"
+      placeholder="найти базу"
+      formControlName="searchValue">
+    >
     <div class="form-submit-button">
-      <input type="submit" value="Найти">
+      <button type="submit"
+              [disabled]="form.invalid"
+      >Найти
+      </button>
     </div>
   </form>
 </div>

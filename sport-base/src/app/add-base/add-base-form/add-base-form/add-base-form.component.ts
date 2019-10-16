@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-base-form',
@@ -11,7 +11,8 @@ export class AddBaseFormComponent implements OnInit {
     name: new FormControl(''),
     email: new FormControl(''),
     phone: new FormControl(''),
-    description: new FormControl('')
+    description: new FormControl(''),
+    file: new FormControl('')
   });
   constructor() { }
 

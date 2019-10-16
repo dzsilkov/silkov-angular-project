@@ -22,10 +22,10 @@ import { ArticlesCatalogModule } from './articles-catalog/articles-catalog.modul
 import { SliderModule } from './slider/slider.module';
 import { TitleComponent } from './title/title.component';
 import { FormSearchComponent } from './form-search/form-search.component';
-import { FormInputComponent } from './form-search/components/form-input/form-input.component';
 import { ContactsComponent} from "./contacts/contacts.component";
 import { HomeComponent} from "./home/home.component";
 import { AddBaseFormComponent} from "./add-base/add-base-form/add-base-form/add-base-form.component";
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 
 
@@ -40,9 +40,9 @@ import { AddBaseFormComponent} from "./add-base/add-base-form/add-base-form/add-
     BreadcrumbComponent,
     TitleComponent,
     FormSearchComponent,
-    FormInputComponent,
     HomeComponent,
     ContactsComponent,
+    // LoadingSpinnerComponent,
   ],
 
   imports: [
@@ -59,6 +59,7 @@ import { AddBaseFormComponent} from "./add-base/add-base-form/add-base-form/add-
   ],
 
   exports: [
+    // LoadingSpinnerComponent
   ],
 
   providers: [
