@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes} from "@angular/router";
 
-import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 import { NotFoundComponent} from "../not-found/not-found.component";
 import { DashBoardComponent} from "../dashboard/dashboard.component";
 import { BaseCatalogModule} from "../base-catalog/base-catalog-module";
@@ -18,7 +17,6 @@ export const appRoutes: Routes = [
   declarations: [
     NotFoundComponent,
     DashBoardComponent,
-    LoadingSpinnerComponent
   ],
 
   imports: [

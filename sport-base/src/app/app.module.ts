@@ -26,6 +26,7 @@ import { ContactsComponent} from "./contacts/contacts.component";
 import { HomeComponent} from "./home/home.component";
 import { AddBaseFormComponent} from "./add-base/add-base-form/add-base-form/add-base-form.component";
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { GoTopComponent } from './go-top/go-top.component';
 
 
 
@@ -42,7 +43,8 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     FormSearchComponent,
     HomeComponent,
     ContactsComponent,
-    // LoadingSpinnerComponent,
+    GoTopComponent,
+    LoadingSpinnerComponent,
   ],
 
   imports: [
@@ -59,7 +61,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
   ],
 
   exports: [
-    // LoadingSpinnerComponent
+    LoadingSpinnerComponent
   ],
 
   providers: [
