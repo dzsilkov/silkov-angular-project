@@ -1,16 +1,11 @@
-import {Component, OnInit, Input, OnChanges, SimpleChange} from '@angular/core';
-import {tap} from 'rxjs/operators';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-slide',
   templateUrl: './slide.component.html',
   styleUrls: ['./slide.component.css']
 })
-export class SlideComponent implements OnInit {
+export class SlideComponent {
   @Input()
-  slide;
-  constructor() { }
-
-  ngOnInit() {
-  }
+  slide: string;
 }

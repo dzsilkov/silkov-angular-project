@@ -1,0 +1,6 @@
+<h2 class="title">Каталог</h2>
+<div class="catalog">
+  <div *ngFor="let sportBase of sportBases$; let i = index">
+    <app-catalog-item [sportBase]="sportBase" [routerLink]="i"></app-catalog-item>
+  </div>
+</div>

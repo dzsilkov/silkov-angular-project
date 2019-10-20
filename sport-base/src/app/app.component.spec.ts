@@ -19,13 +19,13 @@ describe('AppComponent', () => {
   it(`should have as title 'sport-base'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('sport-base');
+    expect(app.title).toEqual('components');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('sport-base app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('components app is running!');
   });
 });

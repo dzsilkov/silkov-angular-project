@@ -1,0 +1,16 @@
+<svg width="30" height="31" viewBox="0 0 30 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>soc-3</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-406 -3585)">
+<g id="soc-3">
+<g id="Capa_1">
+<g id="Shape">
+<use xlink:href="#path0_fill" transform="translate(406 3585.5)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 30 0L 30 30L 0 30L 0 0ZM 18.6 15.4202L 16.1766 15.4202C 16.1766 19.292 16.1766 24.0578 16.1766 24.0578L 12.5856 24.0578C 12.5856 24.0578 12.5856 19.3382 12.5856 15.4202L 10.8786 15.4202L 10.8786 12.3674L 12.5856 12.3674L 12.5856 10.3928C 12.5856 8.9786 13.2576 6.7688 16.2096 6.7688L 18.8706 6.779L 18.8706 9.7424C 18.8706 9.7424 17.2536 9.7424 16.9392 9.7424C 16.6248 9.7424 16.1778 9.8996 16.1778 10.574L 16.1778 12.368L 18.9138 12.368L 18.6 15.4202Z"/>
+</defs>
+</svg>

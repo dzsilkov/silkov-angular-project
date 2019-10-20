@@ -1,0 +1,30 @@
+<svg width="30" height="31" viewBox="0 0 30 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>soc-2</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-364 -3585)">
+<g id="soc-2">
+<g id="Capa_1">
+<g id="Group">
+<g id="Shape">
+<use xlink:href="#path0_fill" transform="translate(375.914 3597.41)" fill="#FFFFFF"/>
+</g>
+<g id="Shape">
+<use xlink:href="#path1_fill" transform="translate(382.535 3593.87)" fill="#FFFFFF"/>
+</g>
+<g id="Shape">
+<use xlink:href="#path2_fill" transform="translate(364 3585.5)" fill="#FFFFFF"/>
+</g>
+<g id="Shape">
+<use xlink:href="#path3_fill" transform="translate(372.074 3598.66)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 2.9808 5.964C 4.6242 5.964 5.964 4.6266 5.964 2.982C 5.964 2.3328 5.7516 1.7334 5.4 1.2438C 4.8582 0.4926 3.9774 0 2.9826 0C 1.9872 0 1.107 0.492 0.564002 1.2432C 0.211202 1.7328 0.000601813 2.3322 1.81321e-06 2.9814C -0.00179819 4.626 1.3368 5.964 2.9808 5.964Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 2.8722 2.8716L 2.8722 0.372L 2.8722 0L 2.4984 0.0012L 0 0.009L 0.0096 2.8812L 2.8722 2.8716Z"/>
+<path id="path2_fill" fill-rule="evenodd" d="M 0 0L 30 0L 30 30L 0 30L 0 0ZM 23.367 13.1576L 23.367 20.0936C 23.367 21.9002 21.8982 23.3684 20.0928 23.3684L 9.69839 23.3684C 7.89239 23.3684 6.42419 21.9002 6.42419 20.0936L 6.42419 13.1576L 6.42419 9.69925C 6.42419 7.89325 7.89239 6.42505 9.69839 6.42505L 20.0922 6.42505C 21.8982 6.42505 23.367 7.89325 23.367 9.69925L 23.367 13.1576Z"/>
+<path id="path3_fill" fill-rule="evenodd" d="M 11.4552 1.7382C 11.4552 4.2924 9.3768 6.372 6.8214 6.372C 4.266 6.372 2.1882 4.2924 2.1882 1.7382C 2.1882 1.1238 2.3106 0.5364 2.529 0L 0 0L 0 6.936C 0 7.8324 0.7278 8.5584 1.6236 8.5584L 12.0174 8.5584C 12.912 8.5584 13.641 7.8324 13.641 6.936L 13.641 0L 11.1108 0C 11.331 0.5364 11.4552 1.1238 11.4552 1.7382Z"/>
+</defs>
+</svg>

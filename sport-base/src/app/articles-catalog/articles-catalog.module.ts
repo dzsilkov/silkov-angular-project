@@ -12,8 +12,8 @@ const routes: Routes = [
   {
     path: 'articles',
     children: [
-      {path: '', component: ArticlesCatalogComponent, data: { bc: 'Статьи' }},
-      {path: ':id', component: ArticleComponent, data: {bc: ':id'}}
+      {path: '', component: ArticlesCatalogComponent, data: { breadcrumb: 'Статьи' }},
+      {path: ':id', component: ArticleComponent, data: {breadcrumb: ':id'}}
     ]
   },
 ];

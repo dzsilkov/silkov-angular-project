@@ -1,8 +1,9 @@
 <div class="slider-container">
-  <!--<app-slider-control></app-slider-control>-->
-  <app-slider-pagination [slides]="slides"></app-slider-pagination>
   <div class="slides">
-    <app-slide
-    [slide]="slide"></app-slide>
+    <app-slide [slide]="slide"></app-slide>
+    <app-slider-overlay></app-slider-overlay>
+    <app-slider-content></app-slider-content>
+    <!--<app-slider-control></app-slider-control>-->
+    <!--<app-slider-pagination [slides]="slides"></app-slider-pagination>-->
   </div>
 </div>

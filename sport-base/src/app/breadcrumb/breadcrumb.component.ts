@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, NavigationEnd, PRIMARY_OUTLET, Router, RouterEvent} from "@angular/router";
 import {Breadcrumb} from "../models/breadcrumb";
 import {filter, map, tap} from "rxjs/operators";
-import {log} from "util";
-import {Logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-breadcrumb',

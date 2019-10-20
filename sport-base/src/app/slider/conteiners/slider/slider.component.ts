@@ -6,16 +6,6 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  // $slider = $(".slider");
-  // $slideBGs = $(".slide__bg");
-  // diff = 0;
-  // curSlide = 0;
-  // numOfSlides = $(".slide").length-1;
-  // animating = false;
-  // animTime = 500;
-  // autoSlideTimeout;
-  // autoSlideDelay = 6000;
-  // $pagination = $(".slider-pagi");
 slides = [
   './../../../assets/slider-1.jpg',
   './../../../assets/slider-2.jpg',

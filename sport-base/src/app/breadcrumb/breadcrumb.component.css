@@ -1,7 +1,7 @@
 .container {
- margin: 0 auto;
   background-color: black;
 }
+
 li:first-child {
   font-weight: bold;
 }
@@ -13,7 +13,7 @@ li:first-child {
   color: white;
   background-color: black;
   border-bottom: 2px solid gray;
-  margin: 0 1em 1em;
+  margin: 0 3em;
 }
 
 .breadcrumb-item {

@@ -1,35 +1,36 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes} from "@angular/router";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from "@angular/router";
 
-import { NotFoundComponent} from "../not-found/not-found.component";
-import { DashBoardComponent} from "../dashboard/dashboard.component";
-import { BaseCatalogModule} from "../base-catalog/base-catalog-module";
+import {NotFoundComponent} from "../not-found/not-found.component";
+import {ArticlesCatalogModule} from "../articles-catalog/articles-catalog.module";
+import {ContactsComponent} from "../contacts/contacts.component";
+import {HomeComponent} from "../home/home.component";
 
 export const appRoutes: Routes = [
-  {path: '', component: DashBoardComponent, data: { breadcrumb: 'Главная' }},
-  // {path: 'contacts', component: ContactsComponent, data: { bc: 'Контакты' }},
+  {path: 'home', component: HomeComponent, data: {breadcrumb: 'Главная'}},
+  {path: 'contacts', component: ContactsComponent, data: {breadcrumb: 'Контакты'}},
   // {path: 'add-base', component: AddBaseComponent, data: { bc: 'Добавить базу' }},
-  {path: '**', component: NotFoundComponent, data: { breadcrumb: 'NotFound' }}
+  // { path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', component: HomeComponent, data: {breadcrumb: 'Главная'}},
+  {path: '**', component: NotFoundComponent, data: {breadcrumb: 'NotFound'}}
 ];
 
 @NgModule({
   declarations: [
     NotFoundComponent,
-    DashBoardComponent,
   ],
 
   imports: [
     CommonModule,
     RouterModule.forRoot(appRoutes),
-    BaseCatalogModule,
-
+    ArticlesCatalogModule,
   ],
   exports: [
     RouterModule,
     NotFoundComponent,
-    DashBoardComponent,
   ]
 
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
