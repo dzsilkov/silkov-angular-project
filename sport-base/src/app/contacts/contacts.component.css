@@ -14,16 +14,14 @@
 .contacts-coll {
   flex: 1;
   margin: 0 3em;
-}
-
-.contacts-coll:last-child {
-  border-left: 1px solid gray;
-  padding-left: 1em;
+  text-align: left;
+  padding: 2em;
+  border-bottom: 2px solid gray;
 }
 
 .contacts__header {
   margin: 0;
-  padding: 1em;
+  padding: 1.5em .5em .5em;
   font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 2.5em;
   font-weight: bold;
@@ -36,7 +34,7 @@
 .contacts-card h3 {
   font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 2.2em;
-  padding: 0.3em 0 0.6em 2em;
+  padding: .5em;
   font-weight: bold;
   color: white;
   text-align: left;
@@ -45,7 +43,7 @@
 .contacts-card p {
   font-family: 'Lato', Calibri, Arial, sans-serif;
   font-size: 1.2em;
-  padding: 0.3em 0.3em;
+  padding: .3em .3em;
   color: white;
 }
 

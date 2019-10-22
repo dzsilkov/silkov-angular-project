@@ -7,7 +7,6 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class AddBaseComponent implements OnInit {
   @Input()
- show;
   title = 'Добавить спортивную базу';
   constructor() { }
 

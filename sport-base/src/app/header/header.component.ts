@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {FlashMessagesService} from "angular2-flash-messages";
+import {AuthService} from "../auth/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -6,34 +9,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-searchShow: boolean;
-addBaseShow: boolean;
+  searchShow: boolean;
+  isLoggedIn: boolean;
+  loggedInUser: string;
+  showRegister: boolean;
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    // private flashMessage: FlashMessagesService,
+  ) {
+  }
 
   ngOnInit() {
-  }
-  searchInputToggle($event: Event): void {
-    if (this.addBaseShow) {
-      this.searchShow = !this.searchShow;
-      this.addBaseShow = !this.addBaseShow;
-    } else {
-      this.searchShow = !this.searchShow;
-    }
-  }
-
-  addBaseToggle($event: Event): void {
-    if (this.searchShow) {
-      this.addBaseShow = !this.addBaseShow;
-      this.searchShow = !this.searchShow;
-    } else {
-      this.addBaseShow = !this.addBaseShow;
-    }
+    this.authService.getAuth().subscribe(auth => {
+      if (auth) {
+        this.isLoggedIn = true;
+        this.loggedInUser = auth.email;
+      } else {
+        this.isLoggedIn = false;
+      }
+    });
+    this.showRegister = true;
   }
 
-  signUpUser() {
+  searchInputToggle(e): void {
+    e.preventDefault();
+    this.searchShow = !this.searchShow;
   }
 
-  logInUser() {
+  logoutClick() {
+    this.authService.signOut();
+    // this.flashMessage.show('You are now logged out', {
+    //   cssClass: 'alert-success', timeout: 4000
+    // });
+    this.router.navigate(['/login']);
   }
 }

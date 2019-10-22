@@ -1,4 +1,4 @@
-.nav-container li {
+.nav-link {
   letter-spacing: .1em;
   color: #00BFFF;
   font-size: 1rem;
@@ -9,21 +9,22 @@
   border-bottom: 2px solid black;
   outline: none;
   cursor: pointer;
+  display: block;
 }
 
-.nav-container {
+.navbar-nav {
   /*margin-bottom: .8em;*/
 }
 
-.nav-container li.active {
+.nav-link.active {
   color: gold;
 }
 
-.nav-container li:hover {
+.nav-link:hover {
   border-bottom: 2px solid gold;
 }
 
-.nav-container {
+.navbar-nav {
   background-color: black;
   display: flex;
   justify-content: center;

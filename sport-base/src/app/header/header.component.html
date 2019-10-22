@@ -12,21 +12,36 @@
     </div>
     <div class="toolbar-actions">
       <ul class="toolbar-actions-items">
-        <li (click)="signUpUser()">sign up</li>
-        <li (click)="logInUser()">log in</li>
-        <li (click)="searchInputToggle($event)">
-          <img class="searchLogo"
+        <li *ngIf="!isLoggedIn && showRegister">
+          <a routerLink="/signup" class="nav-link">
+            sign up
+          </a>
+        </li>
+        <li *ngIf="!isLoggedIn && showRegister">
+          <a routerLink="/login" class="nav-link">
+            log in
+          </a>
+        </li>
+        <li *ngIf="isLoggedIn">
+          <a href="#" (click)="logoutClick()" class="nav-link">Logout</a>
+        </li>
+        <li>
+          <a href="#" (click)="searchInputToggle($event)" class="nav-link">
+            <img class="searchLogo"
                  width="28"
                  alt="search"
                  src="../../assets/image/logo/search.svg"
-        />
+            />
+          </a>
         </li>
-        <li (click)="addBaseToggle($event)">
-          <img class="addLogo"
+        <li>
+          <a routerLink="/add-base" class="nav-link">
+            <img class="addLogo"
                  width="30"
                  alt="add"
                  src="../../assets/image/logo/add.svg"
-        />
+            />
+          </a>
         </li>
       </ul>
     </div>
@@ -36,7 +51,6 @@
 <section class="header-outlet">
   <app-form-search [show]="searchShow">
   </app-form-search>
-  <app-add-base [show]="addBaseShow">
-  </app-add-base>
+  <flash-messages></flash-messages>
 </section>
 

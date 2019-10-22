@@ -10,7 +10,7 @@ export class SportBaseStoreService {
   ) { }
 
   getSportBases() {
-    this.store.select('sportBases')
+    // this.store.select('sportBases')
   }
 
   // getSportBase(id: number) {

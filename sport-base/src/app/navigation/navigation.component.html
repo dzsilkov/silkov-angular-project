@@ -1,11 +1,13 @@
 <div class="container">
-  <nav>
-    <ul class="nav-container">
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+    <ul class="navbar-nav">
       <li *ngFor="let item of nav"
-          [routerLink]="item.link"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: item.exact }">
-        {{ item.name }}
+          class="nav-item">
+        <a [routerLink]="item.link"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: item.exact }"
+           class="nav-link"> {{ item.name }}
+        </a>
       </li>
     </ul>
   </nav>

@@ -21,6 +21,8 @@
     "@angular/router": "~8.2.4",
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "angularfire2": "^5.2.1",
+    "angular2-flash-messages": "^3.0.1",
+    "font-awesome": "^4.7.0",
     "firebase": "^7.2.0",
     "ng2-breadcrumb": "^0.5.14",
     "rxjs": "~6.4.0",

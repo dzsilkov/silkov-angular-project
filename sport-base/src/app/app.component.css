@@ -55,7 +55,8 @@ main {
 
 .service {
   background-color: black;
-  padding-top: 3em;
+  padding-top: 1em;
+  border-bottom: 2px solid gray;
 }
 
 .service-card {
@@ -68,34 +69,32 @@ main {
   color: white;
 }
 
-.service-item {
+.service-col {
   flex: 1;
   margin: 0 3em;
+  text-align: center;
+  padding: 2em;
+
 }
 
-.service-item:last-child {
-  border-left: 1px solid gray;
-  padding-left: 1em;
-}
-
-.service-item__header {
+.service-col__header {
   font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 2.2em;
-  padding: 0.3em 0 0.6em 2em;
+  padding: .5em;
   font-weight: bold;
   color: white;
-  text-align: left;
+  /*text-align: left;*/
 }
 
-.service-item__content {
+.service-col__content {
   font-family: 'Lato', Calibri, Arial, sans-serif;
   font-size: 1.2em;
-  padding: 0.3em 0.3em;
+  padding: .3em .3em;
   color: white;
 }
 
-.service-item__action {
-  margin: 0.3em 0.3em;;
+.service-col__action {
+  margin: .8em .3em;;
   font-size: 1rem;
   color: white;
   font-weight: 400;
@@ -108,11 +107,11 @@ main {
   min-width: 16em;
   outline: none;
   text-align: center;
-  transition: all 0.18s ease-in-out;
-  display: block;
+  transition: all .18s ease-in-out;
+  /*display: block;*/
 }
 
-.service-item__action:hover {
+.service-col__action:hover {
   color: white;
   background: #333;
 }

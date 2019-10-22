@@ -1,6 +1,7 @@
 .header-toolbar {
   font-size: 1rem;
   background-color: black;
+  border-bottom: 2px solid gray;
 }
 
 .toolbar-layout {
@@ -10,7 +11,7 @@
   flex-flow: row wrap;
   align-items: center;
   margin: 0 3em;
-  border-bottom: 2px solid gray;
+  /*border-bottom: 2px solid gray;*/
   padding-bottom: .5em;
 }
 
@@ -26,17 +27,17 @@
   color: white;
 }
 
-.toolbar-actions-items li {
+.nav-link {
   font-weight: 600;
   padding: 1em .6em .1em .6em;
   color: white;
   cursor: pointer;
   border-bottom: 2px solid black;
-
+  display: block;
 }
 
-.toolbar-actions-items li:hover,
-.toolbar-actions-items li:active {
+.nav-link:hover,
+.nav-link:active {
   border-bottom: 2px solid gold;
 }
 

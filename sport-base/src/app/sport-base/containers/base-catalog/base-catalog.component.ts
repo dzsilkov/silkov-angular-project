@@ -1,10 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SportBase} from "../../../models/sport-base";
-import {SportBaseService} from "../../sport-base.service";
-import {map, pluck, tap} from "rxjs/operators";
-import {Observable} from "rxjs/internal/Observable";
-import {SportBaseStoreService} from "../sport-base-store.service";
-import {Subscription} from "rxjs/internal/Subscription";
+import {tap} from "rxjs/operators";
+import {DataBaseService} from "../../../services/data-base.service";
 
 @Component({
   selector: 'app-base-catalog',
@@ -14,11 +11,10 @@ import {Subscription} from "rxjs/internal/Subscription";
 
 export class BaseCatalogComponent implements OnDestroy, OnInit{
   private sportBases$: SportBase[];
-  subscription: Subscription;
-  constructor(private baseService: SportBaseService) { }
+  constructor(private baseService: DataBaseService) { }
 
   ngOnInit(): void {
-    this.subscription = this.baseService.getBases().pipe(
+    this.baseService.getSportBases().pipe(
       tap(console.log),
     )
       .subscribe((data: SportBase[]) => {
@@ -31,7 +27,6 @@ export class BaseCatalogComponent implements OnDestroy, OnInit{
       );
   }
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
   // sportBases$;

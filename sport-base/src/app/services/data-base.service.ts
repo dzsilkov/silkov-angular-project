@@ -1,29 +1,36 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { SportBase} from "../models/sport-base";
-import {tap} from "rxjs/operators";
+import {map} from "rxjs/operators";
 import {Store} from "../store";
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
+
 
 
 @Injectable()
 export class DataBaseService {
-  sportBases: AngularFirestoreCollection<SportBase>;
-  bases: Observable<SportBase>;
+  sportBasesCollection: AngularFirestoreCollection<SportBase>;
+  sportBaseDoc: AngularFirestoreDocument<SportBase>;
+  sportBases: Observable<SportBase[]>;
 
   constructor(
     private db: AngularFirestore,
     private store: Store
   ) {
-    this.sportBases = this.db.collection('sportBases');
-    this.sportBases.valueChanges().pipe(
-      tap(console.log),
-      tap(sportBases => {
-        this.store.set('sportBases', sportBases);
-      })
-    )
-      .subscribe((bases) => this.bases = bases);
-    console.log(this.bases);
+    this.sportBasesCollection = this.db.collection('sportBases');
   }
+  getSportBases(): Observable<SportBase[]> {
+    this.sportBases = this.sportBasesCollection.snapshotChanges().pipe(
+      map(changes => {
+        return changes.map(action => {
+          const data = action.payload.doc.data() as SportBase;
+          console.log('data', data)
+          data.id = action.payload.doc.id;
+          return data;
+        });
+      })
+    );
 
+    return this.sportBases;
+  }
 }
