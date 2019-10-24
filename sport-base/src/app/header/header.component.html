@@ -22,8 +22,11 @@
             log in
           </a>
         </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a routerLink="user" class="nav-link">{{ loggedInUser }}</a>
+        </li>
         <li *ngIf="isLoggedIn">
-          <a href="#" (click)="logoutClick()" class="nav-link">Logout</a>
+          <a href="#" (click)="logoutClick($event)" class="nav-link">Logout</a>
         </li>
         <li>
           <a href="#" (click)="searchInputToggle($event)" class="nav-link">

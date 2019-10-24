@@ -35,9 +35,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const email = this.login.value.email;
-    console.log(email);
     const password = this.login.value.password;
-    console.log(password);
     this.authService.login(email, password)
       .then(res => {
         // this.flashMessage.show('You are now logged in', {

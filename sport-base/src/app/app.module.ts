@@ -35,6 +35,8 @@ import {DataBaseService} from "./services/data-base.service";
 import {CatalogItemComponent} from "./sport-base/components/catalog-item/catalog-item.component";
 import {BaseCatalogComponent} from "./sport-base/containers/base-catalog/base-catalog.component";
 import {SportBaseDetailComponent} from "./sport-base/containers/sport-base-detail/sport-base-detail.component";
+import {UserService} from "./services/user.service";
+import {BaseDescriptionResolve} from "./sport-base/containers/sport-base-detail/base-description-resolve";
 
 
 @NgModule({
@@ -82,6 +84,7 @@ import {SportBaseDetailComponent} from "./sport-base/containers/sport-base-detai
 
   providers: [
     AuthService,
+    UserService,
     DataBaseService,
     Store,
     {

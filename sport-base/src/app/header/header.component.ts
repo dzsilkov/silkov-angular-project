@@ -38,11 +38,12 @@ export class HeaderComponent implements OnInit {
     this.searchShow = !this.searchShow;
   }
 
-  logoutClick() {
+  logoutClick(e) {
     this.authService.signOut();
+    e.preventDefault();
     // this.flashMessage.show('You are now logged out', {
     //   cssClass: 'alert-success', timeout: 4000
     // });
-    this.router.navigate(['/login']);
+    this.router.navigate(['home']);
   }
 }

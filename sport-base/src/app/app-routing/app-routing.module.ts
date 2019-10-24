@@ -50,7 +50,6 @@ export const appRoutes: Routes = [
   ],
   providers: [
     AuthGuard,
-
   ]
 
 })

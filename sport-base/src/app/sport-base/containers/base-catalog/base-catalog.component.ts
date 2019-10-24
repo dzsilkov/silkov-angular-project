@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SportBase} from "../../../models/sport-base";
+import {SportBaseService} from "../../sport-base.service";
 import {tap} from "rxjs/operators";
 import {DataBaseService} from "../../../services/data-base.service";
 

@@ -1,11 +1,16 @@
 <div class="login">
   <div class="login-card">
     <div class="card-body">
+      <img class="smallLogo"
+           alt="Logo"
+           align="right"
+           src="../../../assets/image/logo/smallLogo.svg"
+      />
       <h1 class="card-header">Login
       </h1>
       <form [formGroup]="login" (ngSubmit)="onSubmit()">
         <div class="email">
-          <label for="email">e-mail:</label><br>
+          <label for="email">E-mail:</label><br>
           <input
             type="email"
             autocomplete="off"
