@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {BackendInterceptor} from './back-end/back-end.interceptor';
+// import {BackendInterceptor} from './back-end/back-end.interceptor';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
@@ -36,8 +36,7 @@ import {CatalogItemComponent} from "./sport-base/components/catalog-item/catalog
 import {BaseCatalogComponent} from "./sport-base/containers/base-catalog/base-catalog.component";
 import {SportBaseDetailComponent} from "./sport-base/containers/sport-base-detail/sport-base-detail.component";
 import {UserService} from "./services/user.service";
-import {BaseDescriptionResolve} from "./sport-base/containers/sport-base-detail/base-description-resolve";
-
+import {SportBaseDetailResolve} from "./sport-base/containers/sport-base-detail/sport-base-detail-resolve";
 
 @NgModule({
   declarations: [
@@ -87,11 +86,12 @@ import {BaseDescriptionResolve} from "./sport-base/containers/sport-base-detail/
     UserService,
     DataBaseService,
     Store,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: BackendInterceptor,
-      multi: true
-    }
+    SportBaseDetailResolve,
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: BackendInterceptor,
+    //   multi: true
+    // },
   ],
 
   bootstrap: [AppComponent]

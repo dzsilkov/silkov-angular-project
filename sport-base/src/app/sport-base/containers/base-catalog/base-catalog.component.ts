@@ -1,8 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SportBase} from "../../../models/sport-base";
-import {SportBaseService} from "../../sport-base.service";
-import {tap} from "rxjs/operators";
+import {map, pluck, tap} from "rxjs/operators";
+import {Observable} from "rxjs/internal/Observable";
 import {DataBaseService} from "../../../services/data-base.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-base-catalog',
@@ -11,17 +12,21 @@ import {DataBaseService} from "../../../services/data-base.service";
 })
 
 export class BaseCatalogComponent implements OnDestroy, OnInit{
-  private sportBases$: SportBase[];
-  constructor(private baseService: DataBaseService) { }
+  sportBases$: SportBase[];
+  constructor(
+    private baseService: DataBaseService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.baseService.getSportBases().pipe(
-      tap(console.log),
-    )
-      .subscribe((data: SportBase[]) => {
-        this.sportBases$ = data;
-        console.log(this.sportBases$);
-      },
+    this.getSportBases()
+  }
+
+  getSportBases(): void {
+    this.baseService.getSportBases()
+      .subscribe((bases: SportBase[]) => {
+          this.sportBases$ = bases;
+        },
         err => {
           console.error(`An error occurred: ${err.message}`);
         }
@@ -30,22 +35,4 @@ export class BaseCatalogComponent implements OnDestroy, OnInit{
   ngOnDestroy(): void {
   }
 
-  // sportBases$;
-  // sportBase$: Observable<SportBase>;
-  // sportBasesLoaded: boolean = false;
-  // constructor(private sportBaseStore: SportBaseStoreService
-  // ) {}
-
-  // ngOnInit(){
-  //   this.sportBases$ = this.sportBaseStore.getSportBases();
-    // this.sportBase$ = this.sportBaseStore.getSportBase({id: 0});
-    // this.sportBaseStore.sportBasesLoaded$.pipe(
-    //   map(() => this.sportBasesLoaded = true)
-    // )
-    //   .subscribe();
-  // }
-
-  // addSportBase(sportBase: SportBase) {
-  //   this.sportBaseStore.addSportBase({sportBase})
-  // }
 }

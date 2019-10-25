@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
+import {DataBaseService} from "../../../services/data-base.service";
 
 @Component({
   selector: 'app-add-base-form',
@@ -7,19 +8,20 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./add-base-form.component.css']
 })
 export class AddBaseFormComponent implements OnInit {
-  form = new FormGroup({
+  formSmall = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
     phone: new FormControl(''),
     description: new FormControl(''),
     file: new FormControl('')
   });
-  constructor() { }
+
+  constructor(private baseService: DataBaseService) { }
 
   ngOnInit() {
   }
   onSubmit() {
-    console.log('Submit:', this.form.value);
-    this.form.reset();
+    console.log('Submit:', this.formSmall.value);
+    this.formSmall.reset();
   }
 }

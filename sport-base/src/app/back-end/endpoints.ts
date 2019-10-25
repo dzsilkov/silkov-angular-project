@@ -1,5 +1,5 @@
-export default {
-    bases: '/api/bases',
-    articles: '/api/articles'
-};
-
+// export default {
+//     bases: '/api/bases',
+//     articles: '/api/articles'
+// };
+//

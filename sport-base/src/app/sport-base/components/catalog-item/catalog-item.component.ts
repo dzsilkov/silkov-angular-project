@@ -6,12 +6,7 @@ import {SportBase} from "../../../models/sport-base";
   templateUrl: './catalog-item.component.html',
   styleUrls: ['./catalog-item.component.css']
 })
-export class CatalogItemComponent implements OnInit {
+export class CatalogItemComponent {
   @Input()
   private sportBase: SportBase;
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

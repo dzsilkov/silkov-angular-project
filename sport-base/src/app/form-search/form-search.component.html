@@ -14,5 +14,12 @@
       >Найти
       </button>
     </div>
+    <ul class="search-result">
+      <li *ngFor="let sportBase of sportBases$ | async" >
+        <a routerLink="/detail/{{sportBase.id}}">
+          {{sportBase.name}}
+        </a>
+      </li>
+    </ul>
   </form>
 </div>
