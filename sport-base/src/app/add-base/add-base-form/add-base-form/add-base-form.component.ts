@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {DataBaseService} from "../../../services/data-base.service";
+import {DataBaseService} from "../../../sport-base/services/data-base.service";
 
 @Component({
   selector: 'app-add-base-form',

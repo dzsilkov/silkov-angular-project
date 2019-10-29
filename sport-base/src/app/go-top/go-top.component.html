@@ -1,3 +1,5 @@
-<div class="topAction">
-  <!--<img src="./../../assets/double-arrow-up.svg" alt="">-->
+<div class="topAction"
+     [ngClass]="{'show-topAction': windowScrolled}"
+     (click)="scrollToTop()">
 </div>
+

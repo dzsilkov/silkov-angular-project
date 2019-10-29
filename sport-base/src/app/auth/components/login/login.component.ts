@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {AuthService} from "../auth.service";
+import {AuthService} from "../../auth.service";
 import {Router} from "@angular/router";
 
 

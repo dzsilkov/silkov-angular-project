@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {delay, pluck, switchMap, tap} from "rxjs/operators";
-import {SportBase} from "../../../models/sport-base";
+import {SportBase} from "../../models/sport-base";
 import {Observable} from "rxjs/internal/Observable";
-import {DataBaseService} from "../../../services/data-base.service";
+import {DataBaseService} from "../services/data-base.service";
 
 @Component({
   selector: 'app-sport-base-detail',

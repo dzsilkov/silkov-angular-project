@@ -1,50 +1,14 @@
-<div class="signup">
-  <div class="signup-card">
+<div class="login">
+  <div class="login-card">
     <div class="card-body">
       <img class="smallLogo"
            alt="Logo"
            align="right"
-           src="../../../assets/image/logo/smallLogo.svg"
+           src="../../../../assets/image/logo/smallLogo.svg"
       />
-      <h1 class="card-header">Sign up
+      <h1 class="card-header">Login
       </h1>
-      <form [formGroup]="signup" (ngSubmit)="onSubmit()">
-        <div class="firstName">
-          <label for="firstName">First Name:</label><br>
-          <input
-            type="text"
-            autocomplete="off"
-            id="firstName"
-            formControlName="firstName">
-          <br>
-          <!--<div-->
-          <!--class="error-content"-->
-          <!--*ngIf="required('name')">-->
-          <!--Name is required-->
-          <!--</div>-->
-          <!--<div-->
-          <!--class="error-content"-->
-          <!--*ngIf="invalid">-->
-          <!--</div>-->
-        </div>
-        <div class="lastName">
-          <label for="lastName">Last Name:</label><br>
-          <input
-            type="text"
-            autocomplete="off"
-            id="lastName"
-            formControlName="lastName">
-          <br>
-          <!--<div-->
-          <!--class="error-content"-->
-          <!--*ngIf="required('name')">-->
-          <!--Name is required-->
-          <!--</div>-->
-          <!--<div-->
-          <!--class="error-content"-->
-          <!--*ngIf="invalid">-->
-          <!--</div>-->
-        </div>
+      <form [formGroup]="login" (ngSubmit)="onSubmit()">
         <div class="email">
           <label for="email">E-mail:</label><br>
           <input
@@ -75,7 +39,7 @@
               <img class="hide-password"
                    width="20"
                    alt="hide"
-                   src="../../../assets/image/logo/hide-password.svg"
+                   src="../../../../assets/image/logo/hide-password.svg"
               />
             </span>
           <br>
@@ -89,7 +53,7 @@
           <!--*ngIf="invalid">-->
           <!--</div>-->
         </div>
-        <input type="submit" value="sign" class="action">
+        <input type="submit" value="Login" class="action">
       </form>
     </div>
   </div>

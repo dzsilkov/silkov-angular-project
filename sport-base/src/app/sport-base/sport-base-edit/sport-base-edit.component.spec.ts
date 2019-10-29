@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BaseCatalogComponent } from './base-catalog.component';
+import { SportBaseEditComponent } from './sport-base-edit.component';
 
-describe('BaseCatalogComponent', () => {
-  let component: BaseCatalogComponent;
-  let fixture: ComponentFixture<BaseCatalogComponent>;
+describe('SportBaseEditComponent', () => {
+  let component: SportBaseEditComponent;
+  let fixture: ComponentFixture<SportBaseEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BaseCatalogComponent ]
+      declarations: [ SportBaseEditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BaseCatalogComponent);
+    fixture = TestBed.createComponent(SportBaseEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

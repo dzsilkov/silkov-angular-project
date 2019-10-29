@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs/internal/Observable";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
-import {DataBaseService} from "./services/data-base.service";
+import {DataBaseService} from "./sport-base/services/data-base.service";
 import {tap} from "rxjs/operators";
 
 @Component({

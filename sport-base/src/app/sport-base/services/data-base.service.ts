@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {SportBase} from "../models/sport-base";
+import {SportBase} from "../../models/sport-base";
 import {catchError, map, tap} from "rxjs/operators";
-import {Store} from "../store";
+import {Store} from "../../store";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {User} from "../models/user";
+import {User} from "../../models/user";
 import {of} from "rxjs/internal/observable/of";
 
 
