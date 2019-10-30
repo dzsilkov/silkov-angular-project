@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {AppRoutingModule} from "../app-routing/app-routing.module";
 
 import {AngularFireModule} from "angularfire2";
@@ -18,4 +18,5 @@ import {environment} from "../../environments/environment";
     AngularFireAuthModule,
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+}

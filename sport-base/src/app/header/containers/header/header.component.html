@@ -1,0 +1,61 @@
+<section class="header-toolbar">
+  <div class="toolbar-layout">
+    <div class="toolbar-logo">
+      <a routerLink="home">
+        <img class="sportBaseLogo"
+             width="240"
+             alt="ROSSPORT"
+             src="../../../../assets/image/logo/header-logo.svg"
+        />
+      </a>
+    </div>
+    <div class="toolbar-links">
+      <app-navigation></app-navigation>
+    </div>
+    <div class="toolbar-actions">
+      <ul class="toolbar-actions-items">
+        <li *ngIf="!isLoggedIn && showRegister">
+          <a routerLink="/auth/signup" class="nav-link">
+            sign up
+          </a>
+        </li>
+        <li *ngIf="!isLoggedIn && showRegister">
+          <a routerLink="/auth/login" class="nav-link">
+            log in
+          </a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a routerLink="user" class="nav-link">{{ loggedInUser }}</a>
+        </li>
+        <li *ngIf="isLoggedIn">
+          <a href="#" (click)="logoutClick($event)" class="nav-link">Logout</a>
+        </li>
+        <li>
+          <a href="#" (click)="searchInputToggle($event)" class="nav-link">
+            <img class="searchLogo"
+                 width="28"
+                 alt="search"
+                 src="../../../../assets/image/logo/search.svg"
+            />
+          </a>
+        </li>
+        <li>
+          <a routerLink="/catalog/add-base" class="nav-link">
+            <img class="addLogo"
+                 width="30"
+                 alt="add"
+                 src="../../../../assets/image/logo/add.svg"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<app-breadcrumb></app-breadcrumb>
+<!--<section class="header-outlet">-->
+<!--<app-form-search [show]="searchShow">-->
+<!--</app-form-search>-->
+<!--<flash-messages></flash-messages>-->
+<!--</section>-->
+

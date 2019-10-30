@@ -4,7 +4,7 @@ import {debounceTime, distinctUntilChanged, switchMap, tap} from 'rxjs/operators
 import {SportBase} from "../models/sport-base";
 import {Subject} from "rxjs/internal/Subject";
 import {Observable} from "rxjs/internal/Observable";
-import {DataBaseService} from "../sport-base/services/data-base.service";
+import {DataBaseService} from "../services/data-base.service";
 
 @Component({
   selector: 'app-form-search',
