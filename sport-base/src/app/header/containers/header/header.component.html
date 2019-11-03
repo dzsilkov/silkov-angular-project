@@ -1,7 +1,7 @@
 <section class="header-toolbar">
   <div class="toolbar-layout">
     <div class="toolbar-logo">
-      <a routerLink="home">
+      <a routerLink="">
         <img class="sportBaseLogo"
              width="240"
              alt="ROSSPORT"
@@ -31,7 +31,7 @@
           <a href="#" (click)="logoutClick($event)" class="nav-link">Logout</a>
         </li>
         <li>
-          <a href="#" (click)="searchInputToggle($event)" class="nav-link">
+          <a routerLink="sport-bases/search-base" class="nav-link">
             <img class="searchLogo"
                  width="28"
                  alt="search"
@@ -40,7 +40,7 @@
           </a>
         </li>
         <li>
-          <a routerLink="/catalog/add-base" class="nav-link">
+          <a routerLink="sport-bases/add-base" class="nav-link">
             <img class="addLogo"
                  width="30"
                  alt="add"

@@ -1,18 +1,17 @@
+
 export interface SportBase {
   id?: string,
   name?: string,
   logo?: string,
-  sports?: string[],
   price?: string,
   country?: string,
   region?: string,
-  eat?: string,
-  leave?: string,
+  meals?: string,
+  accommodation?: string,
   description?: string,
   infrastructureBasic?: string,
   infrastructureAdditional?: string,
   infrastructureOther?: string,
+  sports?: string[],
   images?: string[],
 }
-
-

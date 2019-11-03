@@ -1,0 +1,49 @@
+<section class="detail">
+  <div class="detail-header">
+    <h2 class="detail-title">{{ sportBase.name }}</h2>
+    <p class="detail-address">Адрес:
+      <span class="detail-country">{{ sportBase.country }}, </span>
+      <span class="detail-region">{{ sportBase.region }}</span>
+    </p>
+    <p class="sports">Виды Спорта:
+      <span class="sport" *ngFor="let sport of sportBase.sports">{{ sport }}, </span>
+    </p>
+  </div>
+  <div class="detail-extras">
+    <div class="detail-gallery">
+      <h3>Фотогаллерея:</h3>
+      <div class="gallery">
+        <div class="gallery-frame" *ngFor="let img of sportBase.images">
+          <img [src]="img" alt="base-image">
+        </div>
+      </div>
+    </div>
+    <div class="detail-map">
+      <h3>Расположение базы:</h3>
+    </div>
+  </div>
+  <div class="detail-content">
+    <div class="detail-content__description">
+      <h3>Описание и информация:</h3>
+      <p>{{sportBase.description}}</p>
+      <h4>Проживание:</h4>
+      <p> {{sportBase.accommodation}}</p>
+      <h4>Питание:</h4>
+      <p>{{sportBase.meals}}</p>
+      <h4>Стоимость:</h4>
+      <p>{{sportBase.price}}</p>
+    </div>
+    <div class="detail-content__infrastructure">
+      <h3>Инфраструктура:</h3>
+      <p>{{sportBase.infrastructureBasic}}</p>
+      <h4>Дополнительная спортивная инфраструктура:</h4>
+      <p>{{sportBase.infrastructureAdditional}}</p>
+      <h4>Досуговая инфраструктура:</h4>
+      <p>{{sportBase.infrastructureOther}}</p>
+    </div>
+  </div>
+  <div class="detail-actions">
+    <button class="base-comments">оценить</button>
+    <button class="base-comments" [routerLink]="'/sport-bases/' + sportBase.id + '/edit'">редактировать</button>
+  </div>
+</section>

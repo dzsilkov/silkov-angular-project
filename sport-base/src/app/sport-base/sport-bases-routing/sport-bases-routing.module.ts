@@ -9,7 +9,7 @@ import {sportBasesRoutes} from "./sport-bases-routes";
   ],
   exports: [
     RouterModule
-  ]
+  ],
 })
 export class SportBasesRoutingModule {
 }

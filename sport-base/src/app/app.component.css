@@ -1,4 +1,4 @@
-#container {
+:host {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,7 @@
 
 main {
   flex: 1 0 auto;
+  display: flex;
 }
 
 footer {
@@ -52,67 +53,3 @@ main {
     padding: 0 calc(50vw - 590px);
   }
 }
-
-.service {
-  background-color: black;
-  padding-top: 1em;
-  border-bottom: 2px solid gray;
-}
-
-.service-card {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
-  font-size: 1rem;
-  background: black;
-  color: white;
-}
-
-.service-col {
-  flex: 1;
-  margin: 0 3em;
-  text-align: center;
-  padding: 2em;
-
-}
-
-.service-col__header {
-  font-family: "Franklin Gothic Medium", sans-serif;
-  font-size: 2.2em;
-  padding: .5em;
-  font-weight: bold;
-  color: white;
-  /*text-align: left;*/
-}
-
-.service-col__content {
-  font-family: 'Lato', Calibri, Arial, sans-serif;
-  font-size: 1.2em;
-  padding: .3em .3em;
-  color: white;
-}
-
-.service-col__action {
-  margin: .8em .3em;;
-  font-size: 1rem;
-  color: white;
-  font-weight: 400;
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: .8em;
-  padding: .6em;
-  text-transform: lowercase;
-  cursor: pointer;
-  min-width: 16em;
-  outline: none;
-  text-align: center;
-  transition: all .18s ease-in-out;
-  /*display: block;*/
-}
-
-.service-col__action:hover {
-  color: white;
-  background: #333;
-}
-

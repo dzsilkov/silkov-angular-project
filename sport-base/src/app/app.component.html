@@ -1,29 +1,11 @@
-<div id="container">
-  <header>
-    <app-header></app-header>
-  </header>
-  <main class="content">
-    <router-outlet></router-outlet>
-    <section class="service">
-     <div class="service-card">
-       <div class="service-col">
-        <h3 class="service-col__header">Наши услуги</h3>
-        <p class="service-col__content">Организация спортивных сборов</p>
-        <button class="service-col__action" title="перейти на страницу обратной связи">заказать звонок</button>
-      </div>
-      <div class="service-col">
-        <h3 class="service-col__header">Подбор базы</h3>
-        <p class="service-col__content">Подберём базу индивидуально</p>
-        <button class="service-col__action" title="оставить заявку для подбора спортивной базы">Оставить заявку</button>
-      </div>
-     </div>
-    </section>
-    <app-go-top></app-go-top>
-    <app-loading-spinner></app-loading-spinner>
-  </main>
-  <footer>
-    <app-footer></app-footer>
-  </footer>
-</div>
-
-
+<header>
+  <app-header></app-header>
+</header>
+<main>
+  <router-outlet></router-outlet>
+  <app-go-top></app-go-top>
+  <app-loading-spinner></app-loading-spinner>
+</main>
+<footer>
+  <app-footer></app-footer>
+</footer>

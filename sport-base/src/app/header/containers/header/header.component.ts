@@ -44,6 +44,6 @@ export class HeaderComponent implements OnInit {
     // this.flashMessage.show('You are now logged out', {
     //   cssClass: 'alert-success', timeout: 4000
     // });
-    this.router.navigate(['home']);
+    this.router.navigate(['/']);
   }
 }

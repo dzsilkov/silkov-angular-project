@@ -1,0 +1,28 @@
+<div class="search">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="search-input">
+      <input
+        autocomplete="off"
+        type="search"
+        id="searchInput"
+        placeholder="найти базу"
+        formControlName="searchValue">
+      >
+      <ul class="search-result">
+        <li *ngFor="let sportBase of sportBases$ | async">
+          <a routerLink="/sport-bases/{{sportBase.id}}">
+            {{sportBase.name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="form-submit-button">
+      <button type="submit"
+              [disabled]="form.invalid"
+      >Найти
+      </button>
+    </div>
+  </form>
+</div>
+
+

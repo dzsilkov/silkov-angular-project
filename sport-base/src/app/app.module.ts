@@ -13,19 +13,16 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 
 import {AppComponent} from './app.component';
 import {ContactsComponent} from "./contacts/contacts.component";
-import {HomeComponent} from "./home/home.component";
-import {SliderModule} from "./slider/slider.module";
-import {Store} from "./store";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {AuthService} from "./auth/auth.service";
 import {UserService} from "./services/user.service";
 import {DataBaseService} from "./services/data-base.service";
-
+import {Store} from "./sport-base/store";
+import {FacadeSportBaseService} from "./sport-base/services/facade-sport-base.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     ContactsComponent,
     NotFoundComponent,
   ],
@@ -37,7 +34,6 @@ import {DataBaseService} from "./services/data-base.service";
     SharedModule,
     CoreModule,
     HttpClientModule,
-    SliderModule,
     FlashMessagesModule.forRoot()
   ],
 
@@ -48,7 +44,8 @@ import {DataBaseService} from "./services/data-base.service";
     AuthService,
     UserService,
     Store,
-    DataBaseService
+    DataBaseService,
+    FacadeSportBaseService,
     // {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: BackendInterceptor,

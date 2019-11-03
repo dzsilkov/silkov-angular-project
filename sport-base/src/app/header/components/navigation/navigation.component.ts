@@ -15,22 +15,22 @@ interface Nav {
 export class NavigationComponent implements OnInit {
   nav: Nav[] = [
     {
-      link: 'home',
+      link: '',
       name: 'Главная',
       exact: true
     },
     {
-      link: '/catalog',
+      link: 'sport-bases',
       name: 'Каталог',
       exact: true
     },
     {
-      link: '/articles',
+      link: 'articles',
       name: 'Статьи',
       exact: true
     },
     {
-      link: '/contacts',
+      link: 'contacts',
       name: 'Контакты',
       exact: true
     }

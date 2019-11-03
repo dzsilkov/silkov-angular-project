@@ -19,7 +19,8 @@ import {BreadcrumbComponent} from "./components/breadcrumb/breadcrumb.component"
     RouterModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    NavigationComponent,
   ]
 })
 export class HeaderModule {

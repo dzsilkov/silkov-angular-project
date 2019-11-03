@@ -1,18 +1,28 @@
+:host {
+  background-color: black;
+  width: 100%;
+}
+
 .add-base-form {
   font-size: 1rem;
   margin: 0 3em;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: .9em;
+  padding: 2em;
 }
 
 label {
-  font-size: 1rem;
+  font-size: 1.4em;
   padding: .8em;
 }
 
 input:not(.action),
 textarea {
-  font-size: 1rem;
+  font-size: 1.4em;
   line-height: 2em;
-  min-width: 80%;
+  min-width: 100%;
   outline: none;
   color: white;
   border: none;
@@ -29,8 +39,15 @@ fieldset {
 input::placeholder,
 textarea::placeholder {
   color: gray;
-  font-size: 1rem;
+  font-size: 1em;
 }
+
+input:focus,
+textarea:focus {
+  background-color: gray;
+  color: black;
+}
+
 
 input:focus::placeholder,
 textarea:focus::placeholder {
@@ -38,37 +55,46 @@ textarea:focus::placeholder {
 }
 
 h2 {
-  font-size: 2em;
-  text-align: left;
-  font-weight: 400;
+  margin: 0;
+  padding: 1.5em .5em .5em;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
   color: white;
-  padding: .5em;
-  margin-left: 3em;
 }
 
 button,
 .action-label {
-  margin: .5em 3em;
   font-size: 1rem;
   color: white;
-  font-weight: 400;
+  font-weight: 500;
   background-color: transparent;
   border: 1px solid white;
-  border-radius: .8em;
-  padding: .6rem;
+  border-radius: .4em;
   text-transform: lowercase;
+  padding: .4em;
+  margin: .8em;
   cursor: pointer;
-  min-width: 16em;
   outline: none;
-  text-align: center;
   transition: all 0.18s ease-in-out;
-  display: block;
+  text-align: right;
+}
+
+.action {
+  margin: .8em 3em;
+  padding: .6em;
+  min-width: 16em;
+  text-align: center;
+  border-radius: .8em;
 }
 
 .addBaseActions {
+  padding-top: 1.5em;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-content: center;
   flex-flow: row wrap;
 }
@@ -84,3 +110,10 @@ button:hover,
   color: white;
   background: #333;
 }
+
+.sports,
+.images {
+  border-bottom: 2px solid gray;
+}
+
+

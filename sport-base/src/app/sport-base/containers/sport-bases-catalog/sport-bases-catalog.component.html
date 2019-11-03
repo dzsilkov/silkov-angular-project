@@ -1,0 +1,7 @@
+<h2 class="title">Каталог</h2>
+<div class="catalog">
+  <div *ngFor="let sportBase of ( sportBases$ | async )">
+    <app-sport-base-catalog-item [sportBase]="sportBase"></app-sport-base-catalog-item>
+  </div>
+</div>
+
