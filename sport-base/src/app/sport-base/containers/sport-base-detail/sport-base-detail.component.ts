@@ -4,7 +4,6 @@ import {delay, pluck, switchMap, tap} from "rxjs/operators";
 import {SportBase} from "../../../models/sport-base";
 import {Observable} from "rxjs/internal/Observable";
 import {DataBaseService} from "../../../services/data-base.service";
-import {FacadeSportBaseService} from "../../services/facade-sport-base.service";
 
 @Component({
   selector: 'app-sport-base-detail',
@@ -15,6 +14,7 @@ import {FacadeSportBaseService} from "../../services/facade-sport-base.service";
 export class SportBaseDetailComponent implements OnInit {
 
   sportBase: SportBase;
+  review: boolean = false;
 
   constructor(
     private router: Router,
@@ -33,8 +33,12 @@ export class SportBaseDetailComponent implements OnInit {
     })
   }
 
-  edit(id: string) {
+  leaveComment(id: string) {
+    this.review = true;
+  }
 
+  reviewEnd() {
+    this.review = false;
   }
 }
 

@@ -1,6 +1,6 @@
 h2 {
   margin: 0;
-  padding: 1.5em .5em .5em;
+  padding: .5em;
   font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 2.5em;
   font-weight: bold;
@@ -15,4 +15,28 @@ h2 {
   max-width: 100%;
   flex-flow: row wrap;
   justify-content: space-evenly;
+}
+
+button {
+  margin: .5em 3em;
+  font-size: 1rem;
+  color: white;
+  font-weight: 400;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: .8em;
+  padding: .6em;
+  text-transform: lowercase;
+  cursor: pointer;
+  min-width: 16em;
+  outline: none;
+  text-align: center;
+  transition: all 0.18s ease-in-out;
+  display: block;
+  flex: 1 1 auto;
+}
+
+button:hover {
+  color: white;
+  background: #333;
 }

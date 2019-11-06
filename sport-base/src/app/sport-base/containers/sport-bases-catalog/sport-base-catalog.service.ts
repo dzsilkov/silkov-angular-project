@@ -91,6 +91,8 @@ export class SportBaseCatalogService {
               return data;
             });
           }),
+          tap(next => console.log('next', next)),
+          tap(next => this.store.set('sportBases', next))
         )
       )
     )

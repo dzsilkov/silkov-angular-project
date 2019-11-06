@@ -15,6 +15,7 @@ import {filter, tap} from "rxjs/operators";
 export class SportBasesCatalogComponent implements OnInit {
   sportBases$: Observable<SportBase[]>;
   subscription: Subscription;
+  filtered: boolean;
 
   constructor(
     private baseService: SportBaseCatalogService,
@@ -42,13 +43,21 @@ export class SportBasesCatalogComponent implements OnInit {
   // }
 
   filterByCountry(country: string | null) {
+    this.filtered = true;
     console.log('pr-country', country);
     this.baseService.countryFilter$.next(country);
   }
 
   filterByRegion(region: string | null) {
+    this.filtered = true;
     console.log('pr-region', region);
     this.baseService.regionFilter$.next(region);
+  }
+
+  filterClear() {
+    this.filtered = false;
+    this.baseService.regionFilter$.next(null);
+    this.baseService.countryFilter$.next(null);
   }
 
   filterBySport(sport: string | null) {

@@ -1,3 +1,6 @@
+<button (click)="filterClear()" *ngIf="filtered">
+  clear filter
+</button>
 <h2 class="title">Каталог</h2>
 <div *ngIf="sportBases$ | async; let sportBases; else loading">
   <div class="catalog">

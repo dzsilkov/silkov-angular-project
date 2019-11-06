@@ -3,7 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 import {AuthService} from "../../auth.service";
-import {UserService} from "../../../services/user.service";
+import {UserService} from "../../user/user.service";
 
 @Component({
   selector: 'app-signup',

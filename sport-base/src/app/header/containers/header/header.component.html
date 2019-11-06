@@ -25,7 +25,8 @@
           </a>
         </li>
         <li *ngIf="isLoggedIn" class="nav-item">
-          <a routerLink="user" class="nav-link">{{ loggedInUser }}</a>
+          <span>Hello Mr.</span>
+          <a routerLink="/auth/user" class="nav-link">{{ loggedInUser }}</a>
         </li>
         <li *ngIf="isLoggedIn">
           <a href="#" (click)="logoutClick($event)" class="nav-link">Logout</a>

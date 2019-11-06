@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {DataBaseService} from "../../../services/data-base.service";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SportBase} from "../../../models/sport-base";
-import {UserService} from "../../../services/user.service";
+import {UserService} from "../../../auth/user/user.service";
 import {AuthService} from "../../../auth/auth.service";
 import {Router} from "@angular/router";
 
@@ -26,7 +26,9 @@ export class AddSportBaseComponent implements OnInit {
     infrastructureAdditional: new FormControl('', Validators.required),
     infrastructureOther: new FormControl('', Validators.required),
     sports: new FormArray([]),
-    images: new FormArray([])
+    images: new FormArray([]),
+    positiveComments: new FormArray([]),
+    negativeComments: new FormArray([]),
   });
 
   isLoggedIn: boolean;
@@ -86,6 +88,10 @@ export class AddSportBaseComponent implements OnInit {
   }
 
   onSubmit() {
+    this.formAddSportBase.patchValue({
+      positiveComments: [],
+      negativeComments: [],
+    });
     const newBase: SportBase = this.formAddSportBase.value;
     this.baseService.newSportBase(newBase);
     this.formAddSportBase.reset();

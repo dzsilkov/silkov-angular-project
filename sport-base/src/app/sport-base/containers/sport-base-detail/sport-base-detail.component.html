@@ -44,7 +44,19 @@
     </div>
   </div>
   <div class="detail-actions">
-    <button class="base-comments">оценить</button>
-    <button class="base-comments" [routerLink]="'/sport-bases/' + sportBase.id + '/edit'">редактировать</button>
+    <app-reviews *ngIf="review; else action"
+                 [sportBase]="sportBase"
+                 (endReview)="reviewEnd($event)"
+    >
+    </app-reviews>
+    <ng-template #action>
+      <button class="base-comments"
+              (click)="leaveComment()"
+      >оценить</button>
+      <button class="base-comments"
+              [routerLink]="'/sport-bases/' + sportBase.id + '/edit'"
+      >редактировать
+      </button>
+    </ng-template>
   </div>
 </section>

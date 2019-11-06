@@ -14,6 +14,7 @@ import { SearchSportBaseComponent } from './components/search-sport-base/search-
 import {Store} from './store';
 import {SportBaseCatalogService} from "./containers/sport-bases-catalog/sport-base-catalog.service";
 import {SearchSportBaseService} from "./components/search-sport-base/search-sport-base.service";
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {SearchSportBaseService} from "./components/search-sport-base/search-spor
     SportBaseDetailComponent,
     SportBaseCatalogItemComponent,
     SportBaseAppComponent,
-    SearchSportBaseComponent
+    SearchSportBaseComponent,
+    ReviewsComponent
   ],
   imports: [
     CommonModule,

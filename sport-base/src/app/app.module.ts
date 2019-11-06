@@ -15,7 +15,7 @@ import {AppComponent} from './app.component';
 import {ContactsComponent} from "./contacts/contacts.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {AuthService} from "./auth/auth.service";
-import {UserService} from "./services/user.service";
+import {UserService} from "./auth/user/user.service";
 import {DataBaseService} from "./services/data-base.service";
 import {Store} from "./sport-base/store";
 
@@ -40,8 +40,6 @@ import {Store} from "./sport-base/store";
   ],
 
   providers: [
-    AuthService,
-    UserService,
     Store,
     DataBaseService,
     // {

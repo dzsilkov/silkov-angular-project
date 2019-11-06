@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import {SportBase} from "../../../models/sport-base";
-import {FacadeSportBaseService} from "../../services/facade-sport-base.service";
 
 // @Injectable({
 //   providedIn: "root"

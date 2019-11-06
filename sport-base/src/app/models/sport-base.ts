@@ -1,3 +1,4 @@
+import {Comment} from "./comment";
 
 export interface SportBase {
   id?: string,
@@ -14,4 +15,6 @@ export interface SportBase {
   infrastructureOther?: string,
   sports?: string[],
   images?: string[],
+  positiveComments?: Comment[],
+  negativeComments?: Comment[],
 }

@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../../auth/auth.service";
+import {UserService} from "../../../auth/user/user.service";
+import {Observable} from "rxjs/internal/Observable";
+import {User} from "../../../models/user";
 
 @Component({
   selector: 'app-header',
@@ -15,6 +18,7 @@ export class HeaderComponent implements OnInit {
   showRegister: boolean;
 
   constructor(
+    private userService: UserService,
     private authService: AuthService,
     private router: Router,
     // private flashMessage: FlashMessagesService,
@@ -26,6 +30,7 @@ export class HeaderComponent implements OnInit {
       if (auth) {
         this.isLoggedIn = true;
         this.loggedInUser = auth.email;
+        console.log(this.loggedInUser);
       } else {
         this.isLoggedIn = false;
       }
