@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SportBase} from "../../../models/sport-base";
 
 @Component({
@@ -9,4 +9,18 @@ import {SportBase} from "../../../models/sport-base";
 export class SportBaseCatalogItemComponent {
   @Input()
   private sportBase: SportBase;
+
+  @Output()
+  filterCountry: EventEmitter<string> = new EventEmitter<string>();
+
+  @Output()
+  filterRegion: EventEmitter<string> = new EventEmitter<string>();
+
+  filterByCountry(country) {
+    this.filterCountry.emit(country);
+  }
+
+  filterByRegion(region) {
+    this.filterRegion.emit(region);
+  }
 }

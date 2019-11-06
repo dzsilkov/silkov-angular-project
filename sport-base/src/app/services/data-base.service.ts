@@ -12,41 +12,13 @@ import {Store} from "../sport-base/store";
 export class DataBaseService {
   sportBasesCollection: AngularFirestoreCollection<SportBase>;
   sportBaseDoc: AngularFirestoreDocument<SportBase>;
-  sportBases$: Observable<SportBase[]>;
   sportBase$: Observable<SportBase>;
 
   constructor(
     private db: AngularFirestore,
     private store: Store
   ) {
-    this.sportBasesCollection = this.db.collection('sportBases');
-  }
-
-  // getSportBases$ = this.db.collection('sportBases').snapshotChanges().pipe(
-  //   map(changes => {
-  //     return changes.map(action => {
-  //       const data = action.payload.doc.data() as SportBase;
-  //       data.id = action.payload.doc.id;
-  //       return data;
-  //     });
-  //   }),
-  //   tap(next => console.log('next', next)),
-  //   tap(next => this.store.set('sportBases', next))
-  // );
-
-  getSportBases(): Observable<SportBase[]> {
-    this.sportBases$ = this.sportBasesCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(action => {
-          const data = action.payload.doc.data() as SportBase;
-          data.id = action.payload.doc.id;
-          return data;
-        });
-      }),
-      tap(next => console.log('next', next)),
-      tap(next => this.store.set('sportBases', next))
-    );
-    return this.sportBases$;
+    this.sportBasesCollection = this.db.collection<SportBase>('sportBases');
   }
 
   getSportBase(id: string): Observable<SportBase> {
@@ -70,8 +42,9 @@ export class DataBaseService {
     this.sportBasesCollection.add(sportBase);
   }
 
-  updateSportBase(sportBase: SportBase) {
-    this.sportBaseDoc = this.db.doc(`sportBases/${sportBase.id}`);
+  updateSportBase(sportBase: SportBase, id: string) {
+    console.log('update', sportBase.id);
+    this.sportBaseDoc = this.db.doc(`sportBases/${id}`);
     this.sportBaseDoc.update(sportBase);
   }
 
@@ -79,29 +52,5 @@ export class DataBaseService {
     this.sportBaseDoc = this.db.doc(`sportBases/${sportBase.id}`);
     this.sportBaseDoc.delete();
   }
-
-  searchSportBase(str: string) {
-    this.sportBases$ = this.sportBasesCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(action => {
-          const data = action.payload.doc.data() as SportBase;
-          data.id = action.payload.doc.id;
-          console.log('data', data);
-          return data;
-        });
-      })
-    );
-    console.log('bases', this.sportBases$);
-    return this.sportBases$;
-  }
-
-
-
-  //   if (!str.trim()) {
-  //     return of([]);
-  //   }
-  //   return this.db.get<SportBase[]>(`${this.basesUrl}/?name=${str}`).pipe(
-  //     tap(_ => console.log(`found base matching "${str}"`)),
-  //   );
 
 }

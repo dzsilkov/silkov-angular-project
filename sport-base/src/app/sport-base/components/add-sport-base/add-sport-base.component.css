@@ -15,21 +15,31 @@
 
 label {
   font-size: 1.4em;
-  padding: .8em;
+  padding: .3em;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
 }
 
 input:not(.action),
 textarea {
   font-size: 1.4em;
   line-height: 2em;
-  min-width: 100%;
+  width: 100%;
   outline: none;
   color: white;
   border: none;
-  padding: 0 .8em;
+  padding: .5em;
   border-bottom: 2px solid gray;
   background: transparent;
   resize: none;
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+div .sports-input,
+div .images-input {
+  width: 90%;
 }
 
 fieldset {
@@ -73,9 +83,9 @@ button,
   font-weight: 500;
   background-color: transparent;
   border: 1px solid white;
-  border-radius: .4em;
+  border-radius: .5em;
   text-transform: lowercase;
-  padding: .4em;
+  padding: .5em;
   margin: .8em;
   cursor: pointer;
   outline: none;

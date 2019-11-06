@@ -18,7 +18,6 @@ import {AuthService} from "./auth/auth.service";
 import {UserService} from "./services/user.service";
 import {DataBaseService} from "./services/data-base.service";
 import {Store} from "./sport-base/store";
-import {FacadeSportBaseService} from "./sport-base/services/facade-sport-base.service";
 
 @NgModule({
   declarations: [
@@ -45,7 +44,6 @@ import {FacadeSportBaseService} from "./sport-base/services/facade-sport-base.se
     UserService,
     Store,
     DataBaseService,
-    FacadeSportBaseService,
     // {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: BackendInterceptor,

@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {SportBase} from "../../../models/sport-base";
 import {Observable} from "rxjs/internal/Observable";
-import {FacadeSportBaseService} from "../../services/facade-sport-base.service";
 import {Subscription} from "rxjs/internal/Subscription";
-import {DataBaseService} from "../../../services/data-base.service";
 import {Store} from "../../store";
-import {debounce, debounceTime, distinctUntilChanged, filter, takeWhile, tap} from "rxjs/operators";
+import {SportBaseCatalogService} from "./sport-base-catalog.service";
+import {logger} from "codelyzer/util/logger";
+import {filter, tap} from "rxjs/operators";
 
 @Component({
   selector: 'app-sport-bases-catalog',
@@ -17,8 +17,7 @@ export class SportBasesCatalogComponent implements OnInit {
   subscription: Subscription;
 
   constructor(
-    private facade: FacadeSportBaseService,
-    private baseService: DataBaseService,
+    private baseService: SportBaseCatalogService,
     private store: Store
   ) {}
 
@@ -26,19 +25,39 @@ export class SportBasesCatalogComponent implements OnInit {
     this.subscription = this.store.select('sportBases').subscribe();
     // this.sportBases$ = this.store.select('sportBases');
     this.sportBases$ = this.baseService.getSportBases();
-    // this.facade.getSportBases();
-    // this.sportBases$ = this.store.select('sportBases').pipe(
-    //   tap(console.log)
-    // );
-    // // this.subscription = this.baseService.getSportBases().subscribe();
-    //
-    // console.log('bases', this.sportBases$)
   }
 
-  getSportBases() {
+  // filterByCountry(str: string) {
+  //   console.log(str);
+  //   this.sportBases$.pipe(
+  //     tap(console.log),
+  //     filter(base => base.country.includes(str)),
+  //     tap(console.log)
+  //   )
+  // }
 
+  // filterBy(country: string | null) {
+  //   console.log('pr-country', country);
+  //   this.baseService.countryFilter$.next(country);
+  // }
+
+  filterByCountry(country: string | null) {
+    console.log('pr-country', country);
+    this.baseService.countryFilter$.next(country);
   }
+
+  filterByRegion(region: string | null) {
+    console.log('pr-region', region);
+    this.baseService.regionFilter$.next(region);
+  }
+
+  filterBySport(sport: string | null) {
+    // this.sportFilter$.next(sport);
+  }
+
   // ngOnDestroy() {
   //   this.subscription.unsubscribe();
   // }
+
 }
+

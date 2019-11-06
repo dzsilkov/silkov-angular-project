@@ -1,0 +1,129 @@
+:host {
+  background-color: black;
+  width: 100%;
+}
+
+.add-base-form {
+  font-size: 1rem;
+  margin: 0 3em;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: .9em;
+  padding: 2em;
+}
+
+label {
+  font-size: 1.4em;
+  padding: .3em;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+}
+
+input:not(.action),
+textarea {
+  font-size: 1.4em;
+  line-height: 2em;
+  width: 100%;
+  outline: none;
+  color: white;
+  border: none;
+  padding: .5em;
+  border-bottom: 2px solid gray;
+  background: transparent;
+  resize: none;
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+div .sports-input,
+div .images-input {
+  width: 90%;
+}
+
+fieldset {
+  border: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: gray;
+  font-size: 1em;
+}
+
+input:focus,
+textarea:focus {
+  background-color: gray;
+  color: black;
+}
+
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+h2 {
+  margin: 0;
+  padding: 1.5em .5em .5em;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: white;
+}
+
+button,
+.action-label {
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: .5em;
+  text-transform: lowercase;
+  padding: .5em;
+  margin: .8em;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.18s ease-in-out;
+  text-align: right;
+}
+
+.action {
+  margin: .8em 3em;
+  padding: .6em;
+  min-width: 16em;
+  text-align: center;
+  border-radius: .8em;
+}
+
+.addBaseActions {
+  padding-top: 1.5em;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  flex-flow: row wrap;
+}
+.action-file{
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover,
+.action-label:hover {
+  color: white;
+  background: #333;
+}
+
+.sports,
+.images {
+  border-bottom: 2px solid gray;
+}
+
+

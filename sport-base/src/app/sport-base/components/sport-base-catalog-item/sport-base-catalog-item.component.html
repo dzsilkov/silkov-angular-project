@@ -4,8 +4,12 @@
   </div>
   <div class="card__content">
     <div class="action">
-      <span class="btn">{{sportBase.country}}</span>
-      <span class="btn">{{sportBase.region}}</span>
+      <span class="btn"
+            (click)="filterByCountry(sportBase.country)"
+      >{{sportBase.country}}</span>
+      <span class="btn"
+            (click)="filterByRegion(sportBase.region)"
+      >{{sportBase.region}}</span>
     </div>
     <h3 class="card__title">{{sportBase.name}}</h3>
     <span class="card__text"></span>

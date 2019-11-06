@@ -1,7 +1,15 @@
 <h2 class="title">Каталог</h2>
-<div class="catalog">
-  <div *ngFor="let sportBase of ( sportBases$ | async )">
-    <app-sport-base-catalog-item [sportBase]="sportBase"></app-sport-base-catalog-item>
+<div *ngIf="sportBases$ | async; let sportBases; else loading">
+  <div class="catalog">
+    <div *ngFor="let sportBase of ( sportBases)">
+      <app-sport-base-catalog-item
+        [sportBase]="sportBase"
+        (filterCountry)="filterByCountry($event)"
+        (filterRegion)="filterByRegion($event)"
+      ></app-sport-base-catalog-item>
+    </div>
   </div>
+  <div *ngIf="sportBases.length === 0">No results, try clearing filters</div>
 </div>
+<ng-template #loading>Loading...</ng-template>
 

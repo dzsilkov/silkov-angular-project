@@ -29,7 +29,7 @@ export const sportBasesRoutes: Routes = [
         path: 'search-base',
         component: SearchSportBaseComponent,
         data: {breadcrumb: 'найти базу'},
-        canActivate: [AuthGuard]
+        // canActivate: [AuthGuard]
       },
       {
         path: ':id',

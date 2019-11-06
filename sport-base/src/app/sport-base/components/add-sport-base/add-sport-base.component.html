@@ -19,27 +19,28 @@
         formControlName="logo"><br>
     </div>
     <div class="sports" formArrayName="sports">
-      <label for="sportName">Вид спорта:</label><br>
+      <label for="sportName">Виды спорта:</label><br>
       <div *ngFor="let sport of baseSportsControls; let i = index"
            style="margin-top: 10px;"
       >
         <input
+          class="sports-input"
           type="text"
           autocomplete="off"
           id="sportName"
-          formControlName="{{i}}"><br>
+          formControlName="{{i}}">
+        <button
+          type="button"
+          (click)="onDeleteSport(i)"
+        >
+          X
+        </button>
       </div>
       <button
         type="button"
         (click)="onAddSport()"
       >
-        Add Sport
-      </button>
-      <button
-        type="button"
-        (click)="onDeleteSport(i)"
-      >
-        Delete Sport
+        добавить вид спорта
       </button>
     </div>
     <div class="country">
@@ -142,22 +143,23 @@
         style="margin-top: 10px;"
       >
         <input
+          class="images-input"
           type="text"
           autocomplete="off"
           id="baseImage"
-          formControlName="{{i}}"><br>
+          formControlName="{{i}}">
+        <button
+          type="button"
+          (click)="onDeleteImage(i)"
+        >
+          X
+        </button>
       </div>
       <button
         type="button"
         (click)="onAddImage()"
       >
-        Add Image
-      </button>
-      <button
-        type="button"
-        (click)="onDeleteImage(i)"
-      >
-        Delete Image
+        добавить фотографию
       </button>
     </div>
     <div class="addBaseActions">

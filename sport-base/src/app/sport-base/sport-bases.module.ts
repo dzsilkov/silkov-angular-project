@@ -11,8 +11,9 @@ import {SportBaseCatalogItemComponent} from "./components/sport-base-catalog-ite
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SportBaseAppComponent } from './components/sport-base-app/sport-base-app.component';
 import { SearchSportBaseComponent } from './components/search-sport-base/search-sport-base.component';
-import {FacadeSportBaseService} from "./services/facade-sport-base.service";
 import {Store} from './store';
+import {SportBaseCatalogService} from "./containers/sport-bases-catalog/sport-base-catalog.service";
+import {SearchSportBaseService} from "./components/search-sport-base/search-sport-base.service";
 
 @NgModule({
   declarations: [
@@ -29,11 +30,13 @@ import {Store} from './store';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    SportBasesRoutingModule
+    SportBasesRoutingModule,
+
   ],
   providers: [
-    FacadeSportBaseService,
-    Store
+    Store,
+    SportBaseCatalogService,
+    SearchSportBaseService
   ]
 })
 export class SportBasesModule {

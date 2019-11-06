@@ -4,6 +4,7 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angul
 import {SportBase} from "../../../models/sport-base";
 import {UserService} from "../../../services/user.service";
 import {AuthService} from "../../../auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-sport-base',
@@ -35,6 +36,7 @@ export class AddSportBaseComponent implements OnInit {
               private userService: UserService,
               private formBuilder: FormBuilder,
               private authService: AuthService,
+              private router: Router,
   ) {
     this.addBaseForm = formBuilder.group({
       "name": ['', [Validators.required]],
@@ -84,9 +86,9 @@ export class AddSportBaseComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submit:', this.formAddSportBase.value);
     const newBase: SportBase = this.formAddSportBase.value;
     this.baseService.newSportBase(newBase);
     this.formAddSportBase.reset();
+    this.router.navigate([`/sport-bases/`]);
   }
 }
