@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {SportBase} from "../../../models/sport-base";
+import {SportBase} from "../../models/sport-base";
 import {Observable} from "rxjs/internal/Observable";
 import {Subscription} from "rxjs/internal/Subscription";
-import {Store} from "../../store";
 import {SportBaseCatalogService} from "./sport-base-catalog.service";
-import {logger} from "codelyzer/util/logger";
-import {filter, tap} from "rxjs/operators";
+import {SportBasesService} from "../../services/sport-bases.service";
 
 @Component({
   selector: 'app-sport-bases-catalog',
@@ -13,19 +11,26 @@ import {filter, tap} from "rxjs/operators";
   styleUrls: ['./sport-bases-catalog.component.css']
 })
 export class SportBasesCatalogComponent implements OnInit {
-  sportBases$: Observable<SportBase[]>;
+  // sportBases$: Observable<SportBase[]>;
   subscription: Subscription;
-  filtered: boolean;
+  // filtered: boolean;
+
+  loading$: Observable<boolean>;
+  sportBases$: Observable<SportBase[]>;
+  noResults$: Observable<boolean>;
 
   constructor(
-    private baseService: SportBaseCatalogService,
-    private store: Store
+    private baseService: SportBasesService,
   ) {}
 
   ngOnInit() {
-    this.subscription = this.store.select('sportBases').subscribe();
+    this.loading$ = this.baseService.loading$;
+    this.noResults$ = this.baseService.noResults$;
+    this.sportBases$ = this.baseService.sportBases$;
+
+    // this.subscription = this.store.select('sportBases').subscribe();
     // this.sportBases$ = this.store.select('sportBases');
-    this.sportBases$ = this.baseService.getSportBases();
+    // this.sportBases$ = this.baseService.getSportBases();
   }
 
   // filterByCountry(str: string) {
@@ -42,27 +47,27 @@ export class SportBasesCatalogComponent implements OnInit {
   //   this.baseService.countryFilter$.next(country);
   // }
 
-  filterByCountry(country: string | null) {
-    this.filtered = true;
-    console.log('pr-country', country);
-    this.baseService.countryFilter$.next(country);
-  }
-
-  filterByRegion(region: string | null) {
-    this.filtered = true;
-    console.log('pr-region', region);
-    this.baseService.regionFilter$.next(region);
-  }
-
-  filterClear() {
-    this.filtered = false;
-    this.baseService.regionFilter$.next(null);
-    this.baseService.countryFilter$.next(null);
-  }
-
-  filterBySport(sport: string | null) {
-    // this.sportFilter$.next(sport);
-  }
+  // filterByCountry(country: string | null) {
+  //   this.filtered = true;
+  //   console.log('pr-country', country);
+  //   this.baseService.countryFilter$.next(country);
+  // }
+  //
+  // filterByRegion(region: string | null) {
+  //   this.filtered = true;
+  //   console.log('pr-region', region);
+  //   this.baseService.regionFilter$.next(region);
+  // }
+  //
+  // filterClear() {
+  //   this.filtered = false;
+  //   this.baseService.regionFilter$.next(null);
+  //   this.baseService.countryFilter$.next(null);
+  // }
+  //
+  // filterBySport(sport: string | null) {
+  //   // this.sportFilter$.next(sport);
+  // }
 
   // ngOnDestroy() {
   //   this.subscription.unsubscribe();

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {debounceTime, distinctUntilChanged, switchMap, take, tap} from "rxjs/operators";
-import {SportBase} from "../../../models/sport-base";
+import {SportBase} from "../../models/sport-base";
 import {FormControl, FormGroup} from "@angular/forms";
 import {Observable} from "rxjs/internal/Observable";
 import {SearchSportBaseService} from "./search-sport-base.service";

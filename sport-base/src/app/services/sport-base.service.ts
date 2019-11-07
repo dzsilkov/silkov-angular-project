@@ -2,9 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Observable} from 'rxjs';
-import {SportBase} from "../models/sport-base";
+import {SportBase} from "../sport-base/models/sport-base";
 import {catchError, map, tap} from "rxjs/operators";
-import {Store} from "../store";
 import {of} from "rxjs/internal/observable/of";
 
 
@@ -12,15 +11,14 @@ import {of} from "rxjs/internal/observable/of";
   providedIn: "root"
 })
 
-export class SportBaseService {
+export class SportbaseService {
   private basesUrl: string = '/api/bases';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
 
-  constructor(private http: HttpClient,
-              private store: Store) {
+  constructor(private http: HttpClient) {
   }
 
   getBases(): Observable<SportBase[]> {
@@ -33,9 +31,6 @@ export class SportBaseService {
             return []
           }
           return sportBases
-        }),
-        tap(sportBases => {
-          this.store.set('sportBases', sportBases);
         }),
         catchError(this.handleError<SportBase[]>('getBases', []))
       );

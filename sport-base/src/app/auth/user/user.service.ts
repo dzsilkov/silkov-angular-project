@@ -5,7 +5,6 @@ import {User} from "../../models/user";
 import {Observable} from "rxjs/internal/Observable";
 import {map, switchMap, tap} from "rxjs/operators";
 import {AuthService} from "../auth.service";
-import {SportBase} from "../../models/sport-base";
 import {Subject} from "rxjs/internal/Subject";
 
 

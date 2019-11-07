@@ -1,8 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {delay, pluck, switchMap, tap} from "rxjs/operators";
-import {SportBase} from "../../../models/sport-base";
-import {Observable} from "rxjs/internal/Observable";
+import {SportBase} from "../../models/sport-base";
 import {DataBaseService} from "../../../services/data-base.service";
 
 @Component({

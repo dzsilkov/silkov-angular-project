@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {SportBase} from "../../../models/sport-base";
+import {SportBase} from "../../models/sport-base";
 
 @Component({
   selector: 'app-sport-base-catalog-item',

@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
 import {map} from "rxjs/operators";
-import {SportBase} from "../../../models/sport-base";
+import {SportBase} from "../../models/sport-base";
 import {Observable, Subject} from "rxjs/index";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "angularfire2/firestore";
-import {Store} from "../../store";
 import {BehaviorSubject} from "rxjs/internal/BehaviorSubject";
 
 @Injectable()
@@ -17,7 +16,6 @@ export class SearchSportBaseService {
 
   constructor(
     private db: AngularFirestore,
-    private store: Store
   ) {
     this.sportBasesCollection = this.db.collection<SportBase>('sportBases');
     this.searchStr$ = new BehaviorSubject(null);

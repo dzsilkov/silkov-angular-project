@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {SportBase} from "../../../models/sport-base";
-import {pluck, switchMap, tap} from "rxjs/operators";
+import {SportBase} from "../../models/sport-base";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataBaseService} from "../../../services/data-base.service";
 

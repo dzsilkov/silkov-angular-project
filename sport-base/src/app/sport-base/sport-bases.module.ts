@@ -9,12 +9,16 @@ import {AddSportBaseComponent} from './components/add-sport-base/add-sport-base.
 import {SportBaseDetailComponent} from "./containers/sport-base-detail/sport-base-detail.component";
 import {SportBaseCatalogItemComponent} from "./components/sport-base-catalog-item/sport-base-catalog-item.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { SportBaseAppComponent } from './components/sport-base-app/sport-base-app.component';
-import { SearchSportBaseComponent } from './components/search-sport-base/search-sport-base.component';
-import {Store} from './store';
+import {SearchSportBaseComponent} from './components/search-sport-base/search-sport-base.component';
 import {SportBaseCatalogService} from "./containers/sport-bases-catalog/sport-base-catalog.service";
 import {SearchSportBaseService} from "./components/search-sport-base/search-sport-base.service";
-import { ReviewsComponent } from './components/reviews/reviews.component';
+import {ReviewsComponent} from './components/reviews/reviews.component';
+
+import {SportBasesService} from './services/sport-bases.service';
+import {SportBasesFirestoreService} from "./services/sport-bases-firestore.service";
+import {SportBasesAppStore} from "./services/sport-bases-app-store";
+import { SportBasesAppComponent } from './components/sport-bases-app/sport-bases-app.component';
+import { SportBasesFormComponent } from './containers/sport-bases-form/sport-bases-form.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +27,11 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
     AddSportBaseComponent,
     SportBaseDetailComponent,
     SportBaseCatalogItemComponent,
-    SportBaseAppComponent,
+    SportBasesAppComponent,
     SearchSportBaseComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    SportBasesAppComponent,
+    SportBasesFormComponent
   ],
   imports: [
     CommonModule,
@@ -36,9 +42,12 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 
   ],
   providers: [
-    Store,
     SportBaseCatalogService,
-    SearchSportBaseService
+    SearchSportBaseService,
+
+    SportBasesService,
+    SportBasesFirestoreService,
+    SportBasesAppStore
   ]
 })
 export class SportBasesModule {

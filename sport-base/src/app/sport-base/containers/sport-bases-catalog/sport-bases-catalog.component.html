@@ -1,10 +1,16 @@
-<button (click)="filterClear()" *ngIf="filtered">
-  clear filter
-</button>
+<div *ngIf="loading$ | async">
+  Loading...
+</div>
+<div *ngIf="noResults$ | async">
+  No results
+</div>
+<!--<button (click)="filterClear()" *ngIf="filtered">-->
+  <!--clear filter-->
+<!--</button>-->
 <h2 class="title">Каталог</h2>
 <div *ngIf="sportBases$ | async; let sportBases; else loading">
   <div class="catalog">
-    <div *ngFor="let sportBase of ( sportBases)">
+    <div *ngFor="let sportBase of sportBases">
       <app-sport-base-catalog-item
         [sportBase]="sportBase"
         (filterCountry)="filterByCountry($event)"

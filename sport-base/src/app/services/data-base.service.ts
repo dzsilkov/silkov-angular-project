@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {SportBase} from "../models/sport-base";
+import {SportBase} from "../sport-base/models/sport-base";
 import {catchError, map, tap} from "rxjs/operators";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {User} from "../models/user";
 import {of} from "rxjs/internal/observable/of";
-import {Store} from "../sport-base/store";
 
 
 @Injectable()
@@ -16,7 +15,6 @@ export class DataBaseService {
 
   constructor(
     private db: AngularFirestore,
-    private store: Store
   ) {
     this.sportBasesCollection = this.db.collection<SportBase>('sportBases');
   }

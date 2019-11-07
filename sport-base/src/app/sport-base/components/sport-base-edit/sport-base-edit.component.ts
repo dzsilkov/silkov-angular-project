@@ -3,7 +3,7 @@ import {DataBaseService} from "../../../services/data-base.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {switchMap} from "rxjs/operators";
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {SportBase} from "../../../models/sport-base";
+import {SportBase} from "../../models/sport-base";
 
 @Component({
   selector: 'app-sport-base-edit',

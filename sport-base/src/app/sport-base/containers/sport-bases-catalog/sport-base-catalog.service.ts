@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs/index";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "angularfire2/firestore";
-import {SportBase} from "../../../models/sport-base";
-import {Store} from "../../store";
+import {SportBase} from "../../models/sport-base";
 import {map, switchMap, tap} from "rxjs/operators";
 import {BehaviorSubject} from "rxjs/internal/BehaviorSubject";
 import {combineLatest} from "rxjs/internal/observable/combineLatest";
@@ -19,7 +18,6 @@ export class SportBaseCatalogService {
 
   constructor(
     private db: AngularFirestore,
-    private store: Store
   ) {
     this.sportBasesCollection = this.db.collection<SportBase>('sportBases');
 
@@ -92,7 +90,6 @@ export class SportBaseCatalogService {
             });
           }),
           tap(next => console.log('next', next)),
-          tap(next => this.store.set('sportBases', next))
         )
       )
     )

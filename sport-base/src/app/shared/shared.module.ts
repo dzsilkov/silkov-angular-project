@@ -8,7 +8,6 @@ import {FooterComponent} from "./footer/footer.component";
 import {TitleComponent} from "./title/title.component";
 import {AuthService} from "../auth/auth.service";
 import {DataBaseService} from "../services/data-base.service";
-import {Store} from "../sport-base/store";
 import {UserService} from "../auth/user/user.service";
 import {DashboardModule} from "../dashboard/dashboard.module";
 
@@ -34,7 +33,6 @@ import {DashboardModule} from "../dashboard/dashboard.module";
   providers: [
     AuthService,
     UserService,
-    Store,
     DataBaseService,
   ],
 
