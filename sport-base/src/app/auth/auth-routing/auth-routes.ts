@@ -2,8 +2,8 @@ import {Routes} from "@angular/router";
 
 import {LoginComponent} from "../components/login/login.component";
 import {SignupComponent} from "../components/signup/signup.component";
-import {AuthComponent} from "../auth/auth.component";
-import {UserComponent} from "../user/user.component";
+import {AuthComponent} from "../components/auth/auth.component";
+import {UserComponent} from "../components/user/user.component";
 
 export const authRoutes: Routes = [
   {

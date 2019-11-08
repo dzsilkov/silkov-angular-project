@@ -19,6 +19,9 @@ import {SportBasesFirestoreService} from "./services/sport-bases-firestore.servi
 import {SportBasesAppStore} from "./services/sport-bases-app-store";
 import { SportBasesAppComponent } from './components/sport-bases-app/sport-bases-app.component';
 import { SportBasesFormComponent } from './containers/sport-bases-form/sport-bases-form.component';
+import {SportBaseDetailStore} from "./services/sport-base-detail-store";
+import {SportBaseDetailService} from "./services/sport-base-detail.service";
+import {SportBaseDetailResolve} from "./containers/sport-base-detail/sport-base-detail-resolve";
 
 @NgModule({
   declarations: [
@@ -39,15 +42,18 @@ import { SportBasesFormComponent } from './containers/sport-bases-form/sport-bas
     FormsModule,
     ReactiveFormsModule,
     SportBasesRoutingModule,
-
   ],
   providers: [
     SportBaseCatalogService,
     SearchSportBaseService,
 
+    // SportBasesResolve,
+    // SportBaseDetailResolve,
     SportBasesService,
     SportBasesFirestoreService,
-    SportBasesAppStore
+    SportBasesAppStore,
+    SportBaseDetailStore,
+    SportBaseDetailService
   ]
 })
 export class SportBasesModule {

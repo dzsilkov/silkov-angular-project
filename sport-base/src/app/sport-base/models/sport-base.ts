@@ -1,4 +1,4 @@
-import {Comment} from "../../models/comment";
+import {Comment} from "../../shared/models/comment";
 
 export interface SportBase {
   id?: string,

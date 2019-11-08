@@ -1,0 +1,13 @@
+<div *ngIf="loading$ | async">
+  Loading...
+</div>
+<div *ngIf="noResults$ | async">
+  No results
+</div>
+<section class="active-user">
+  <h3 class="active-user__title">now active user</h3>
+  <p class="active-user__firstName"><span>First Name: </span>{{ (activeUser$ | async).firstName }}</p>
+  <p class="active-user__lastName">{{ (activeUser$ | async).lastName }}</p>
+  <p class="active-user__admin">{{ (activeUser$ | async).admin }}</p>
+  <p class="active-user__emailName">{{ (activeUser$ | async).email }}</p>
+</section>

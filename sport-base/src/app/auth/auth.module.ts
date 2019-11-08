@@ -8,10 +8,12 @@ import {SharedModule} from "../shared/shared.module";
 import {SignupComponent} from "./components/signup/signup.component";
 import {LoginComponent} from "./components/login/login.component";
 import {AuthRoutingModule} from "./auth-routing/auth-routing.module";
-import {AuthComponent} from "./auth/auth.component";
-import {UserComponent} from "./user/user.component";
+import {AuthComponent} from "./components/auth/auth.component";
+import {UserComponent} from "./components/user/user.component";
 import {AuthService} from "./auth.service";
-import {UserService} from "./user/user.service";
+import {UserFirestoreService} from "./services/user-firestore.service";
+import {UserStoreService} from "./services/user-store.service";
+import {UserService} from "./services/user.service";
 
 
 @NgModule({
@@ -34,8 +36,9 @@ import {UserService} from "./user/user.service";
   providers: [
     AuthService,
     UserService,
+    UserFirestoreService,
+    UserStoreService
   ]
-
 })
 export class AuthModule {
 }

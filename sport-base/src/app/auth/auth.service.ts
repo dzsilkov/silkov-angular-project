@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {map, tap} from "rxjs/operators";
+import {map} from "rxjs/operators";
 
 @Injectable()
 export class AuthService {
@@ -27,7 +27,6 @@ export class AuthService {
   getAuth() {
     return this.afAuth.authState.pipe(
       map(auth => {
-        console.log('auth', auth);
         return auth
       }),
     );

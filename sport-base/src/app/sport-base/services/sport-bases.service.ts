@@ -4,22 +4,25 @@ import {SportBasesAppStore} from "./sport-bases-app-store";
 import {tap, map} from "rxjs/operators";
 import {Observable} from "rxjs/internal/Observable";
 import {SportBase} from "../models/sport-base";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Injectable()
 export class SportBasesService {
-
   constructor(
+    private router: Router,
+    private route: ActivatedRoute,
     private fireStore: SportBasesFirestoreService,
     private store: SportBasesAppStore
   ) {
     this.fireStore.collection$().pipe(
       tap(sportBases => {
+        console.log(sportBases);
         this.store.patch({
           loading: false,
           sportBases,
           totalSportBases: sportBases.length,
           formStatus: '',
-        }, `employees collection subscription`)
+        }, `sportBases collection subscription`)
       })
     ).subscribe()
   }

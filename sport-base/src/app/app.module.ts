@@ -12,12 +12,14 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
 import {FlashMessagesModule} from 'angular2-flash-messages';
 
 import {AppComponent} from './app.component';
-import {ContactsComponent} from "./contacts/contacts.component";
+import {ContactsComponent} from "./shared/components/contacts/contacts.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {AuthService} from "./auth/auth.service";
-import {UserService} from "./auth/user/user.service";
 import {DataBaseService} from "./services/data-base.service";
-import {SliderService} from "./dashboard/containers/slider/slider.service";
+import {SliderService} from "./shared/components/slider/slider.service";
+import {UserFirestoreService} from "./auth/services/user-firestore.service";
+import {UserStoreService} from "./auth/services/user-store.service";
+import {UserService} from "./auth/services/user.service";
 
 @NgModule({
   declarations: [
@@ -35,17 +37,13 @@ import {SliderService} from "./dashboard/containers/slider/slider.service";
     FlashMessagesModule.forRoot()
   ],
 
-  exports: [
-  ],
-
   providers: [
     DataBaseService,
-    SliderService
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: BackendInterceptor,
-    //   multi: true
-    // },
+    SliderService,
+    AuthService,
+    UserService,
+    UserFirestoreService,
+    UserStoreService
   ],
 
   bootstrap: [AppComponent]

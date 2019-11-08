@@ -3,7 +3,6 @@ import {FormControl, FormGroup} from "@angular/forms";
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 import {AuthService} from "../../auth.service";
-import {UserService} from "../../user/user.service";
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +23,6 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private userService: UserService,
     private router: Router,
     // private flashMessage: FlashMessagesService
   ) {
@@ -42,7 +40,7 @@ export class SignupComponent implements OnInit {
           id: this.generateId(),
           admin: false,
         });
-        this.userService.newUser(this.signup.value);
+        // this.userService.newUser(this.signup.value);
         console.log('signup', this.signup.value);
         this.clear();
         // this.flashMessage.show('You are now registered and logged in', {

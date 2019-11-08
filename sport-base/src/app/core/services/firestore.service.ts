@@ -19,7 +19,7 @@ export abstract class FirestoreService<T> {
           return null;
         } else {
           const data = action.payload.data() as T;
-          // data.id = action.payload.id;
+          data.id = action.payload.id;
           return data;
         }
       }),
@@ -38,7 +38,7 @@ export abstract class FirestoreService<T> {
       map(changes => {
         return changes.map(action => {
           const data = action.payload.doc.data() as T;
-          // data.id = action.payload.doc.id;
+          data.id = action.payload.doc.id;
           return data;
         });
       }),

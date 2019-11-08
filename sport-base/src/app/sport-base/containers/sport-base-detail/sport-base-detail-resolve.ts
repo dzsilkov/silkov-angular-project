@@ -1,17 +1,23 @@
-// import { Injectable } from '@angular/core';
-// import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
-// import {SportBase} from "../../models/sport-base";
-// import {DataBaseService} from "../../../services/data-base.service";
-//
-//
-// @Injectable()
-// export class SportBaseDetailResolve implements Resolve<SportBase> {
-//   constructor(private baseService: DataBaseService) {}
-//
-//   resolve(
-//     route: ActivatedRouteSnapshot,
-//     state: RouterStateSnapshot
-//   ) {
-//     return this.baseService.getSportBase(route.paramMap.get('id'));
-//   }
-// }
+import { Injectable } from '@angular/core';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
+import {SportBase} from "../../models/sport-base";
+import {SportBaseDetailService} from "../../services/sport-base-detail.service";
+import {SportBasesFirestoreService} from "../../services/sport-bases-firestore.service";
+
+
+@Injectable({
+  providedIn: "root"
+  })
+export class SportBaseDetailResolve implements Resolve<SportBase> {
+  constructor(private baseService: SportBasesFirestoreService) {}
+
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ) {
+    const doc = this.baseService.doc$(route.paramMap.get('id')).toPromise();
+    return doc.then(data => {
+      return data
+    });
+  }
+}

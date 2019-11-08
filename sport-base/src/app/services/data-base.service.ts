@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {SportBase} from "../sport-base/models/sport-base";
 import {catchError, map, tap} from "rxjs/operators";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {User} from "../models/user";
+import {User} from "../auth/models/user";
 import {of} from "rxjs/internal/observable/of";
 
 

@@ -7,6 +7,7 @@ import {AddSportBaseComponent} from "../components/add-sport-base/add-sport-base
 import {SportBaseDetailComponent} from "../containers/sport-base-detail/sport-base-detail.component";
 import {SearchSportBaseComponent} from "../components/search-sport-base/search-sport-base.component";
 import {SportBasesAppComponent} from "../components/sport-bases-app/sport-bases-app.component";
+import {SportBaseDetailResolve} from "../containers/sport-base-detail/sport-base-detail-resolve";
 
 export const sportBasesRoutes: Routes = [
   {
@@ -18,6 +19,7 @@ export const sportBasesRoutes: Routes = [
         path: '',
         component: SportBasesCatalogComponent,
         data: {breadcrumb: 'Каталог'},
+        // resolve: {sportBases: SportBasesResolve}
         },
       {
         path: 'add-base',
@@ -35,6 +37,7 @@ export const sportBasesRoutes: Routes = [
         path: ':id',
         component: SportBaseDetailComponent,
         data: {breadcrumb: `Каталог`},
+        // resolve: {sportBase: SportBaseDetailResolve},
       },
       {
         path: ':id/edit',

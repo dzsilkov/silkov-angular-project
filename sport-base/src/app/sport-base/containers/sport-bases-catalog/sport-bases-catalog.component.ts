@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {SportBase} from "../../models/sport-base";
 import {Observable} from "rxjs/internal/Observable";
 import {Subscription} from "rxjs/internal/Subscription";
-import {SportBaseCatalogService} from "./sport-base-catalog.service";
 import {SportBasesService} from "../../services/sport-bases.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-sport-bases-catalog',
@@ -20,10 +20,17 @@ export class SportBasesCatalogComponent implements OnInit {
   noResults$: Observable<boolean>;
 
   constructor(
+    private router: Router,
+    private route: ActivatedRoute,
     private baseService: SportBasesService,
   ) {}
 
   ngOnInit() {
+    // this.route.data.subscribe(
+    //   data => {
+    //     console.log('sport', data)
+    //   }
+    // );
     this.loading$ = this.baseService.loading$;
     this.noResults$ = this.baseService.noResults$;
     this.sportBases$ = this.baseService.sportBases$;
