@@ -4,6 +4,7 @@ import {Observable} from "rxjs/internal/Observable";
 import {Subscription} from "rxjs/internal/Subscription";
 import {SportBasesService} from "../../services/sport-bases.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {SportBaseCatalogService} from "./sport-base-catalog.service";
 
 @Component({
   selector: 'app-sport-bases-catalog',
@@ -13,7 +14,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class SportBasesCatalogComponent implements OnInit {
   // sportBases$: Observable<SportBase[]>;
   subscription: Subscription;
-  // filtered: boolean;
+  filtered: boolean;
 
   loading$: Observable<boolean>;
   sportBases$: Observable<SportBase[]>;
@@ -23,6 +24,7 @@ export class SportBasesCatalogComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private baseService: SportBasesService,
+    private catalogService: SportBaseCatalogService
   ) {}
 
   ngOnInit() {
@@ -49,27 +51,27 @@ export class SportBasesCatalogComponent implements OnInit {
   //   )
   // }
 
-  filterBy(country: string | null) {
-    // console.log('pr-country', country);
-    // this.baseService.countryFilter$.next(country);
-  }
+  // filterBy(country: string | null) {
+  //   console.log('pr-country', country);
+  //   this.catalogService.countryFilter$.next(country);
+  // }
 
   filterByCountry(country: string | null) {
-    // this.filtered = true;
-    // console.log('pr-country', country);
-    // this.baseService.countryFilter$.next(country);
+    this.filtered = true;
+    console.log('pr-country', country);
+    this.catalogService.countryFilter$.next(country);
   }
 
   filterByRegion(region: string | null) {
-    // this.filtered = true;
-    // console.log('pr-region', region);
-    // this.baseService.regionFilter$.next(region);
+    this.filtered = true;
+    console.log('pr-region', region);
+    this.catalogService.regionFilter$.next(region);
   }
 
   filterClear() {
-    // this.filtered = false;
-    // this.baseService.regionFilter$.next(null);
-    // this.baseService.countryFilter$.next(null);
+    this.filtered = false;
+    this.catalogService.regionFilter$.next(null);
+    this.catalogService.countryFilter$.next(null);
   }
 
   filterBySport(sport: string | null) {

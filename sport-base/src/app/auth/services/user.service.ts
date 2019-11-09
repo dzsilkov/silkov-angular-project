@@ -16,7 +16,6 @@ export class UserService {
   ) {
     this.afAuth.getAuth().pipe(
       tap(auth => {
-        console.log('frgwere', auth);
         if (auth) {
           this.store.patch({
             loading: false,
