@@ -1,0 +1,18 @@
+<div class="card__item">
+  <div class="card__image">
+    <img [src]="sportBase.logo" alt="">
+  </div>
+  <div class="card__content">
+    <div class="action">
+      <span class="btn"
+            (click)="filterByCountry(sportBase.country)"
+      >{{sportBase.country}}</span>
+      <span class="btn"
+            (click)="filterByRegion(sportBase.region)"
+      >{{sportBase.region}}</span>
+    </div>
+    <h3 class="card__title">{{sportBase.name}}</h3>
+    <span class="card__text"></span>
+    <button (click)=click(sportBase.id) class="card__actions" [routerLink]="sportBase.id">Подробнее</button>
+  </div>
+</div>

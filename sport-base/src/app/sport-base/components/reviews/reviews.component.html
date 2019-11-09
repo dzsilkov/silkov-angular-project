@@ -1,0 +1,43 @@
+<div class="comment">
+  <form [formGroup]="review" (ngSubmit)="onSubmit()">
+    <label for="comment">ваш комментарий:</label><br>
+    <textarea
+      id="comment"
+      autocomplete="off"
+      cols="30"
+      rows="3"
+      formControlName="comment"
+    >
+</textarea>
+    <div class="positive-action">
+      <input
+        id="checkbox"
+        type="checkbox"
+        formControlName="positive"
+        >
+      <label for="checkbox"></label>
+    </div>
+    <!--<div-->
+    <!--class="error-content"-->
+    <!--*ngIf="required('phone')">-->
+    <!--phone is required-->
+    <!--</div>-->
+    <!--<div-->
+    <!--class="error-content"-->
+    <!--*ngIf="invalid">-->
+    <!--</div>-->
+    <button
+      (click)="onSubmit()"
+      type="submit"
+      [disabled]="review.invalid"
+    >
+      добавить комментарий
+    </button>
+    <button
+      type="button"
+      (click)="onDeleteComment()"
+    >
+      отмена
+    </button>
+  </form>
+</div>

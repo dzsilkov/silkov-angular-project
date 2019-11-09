@@ -1,0 +1,53 @@
+:host  {
+  background-color: #11172B;
+  width: 100%;
+}
+
+.contacts-card {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  font-size: 1rem;
+  background: #11172B;
+  color: #ffffff;
+}
+
+.contacts-coll {
+  flex: 1;
+  margin: 0 3em;
+  text-align: left;
+  padding: 2em;
+  border-bottom: 2px solid gray;
+}
+
+.contacts__header {
+  margin: 0;
+  padding: 1.5em .5em .5em;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: #ffffff;
+}
+
+.contacts-card h3 {
+  font-family: "Franklin Gothic Medium", sans-serif;
+  font-size: 2.2em;
+  padding: .5em;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: left;
+}
+
+.contacts-card p {
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 1.2em;
+  padding: .3em .3em;
+  color: #ffffff;
+}
+
+.soc-link {
+  padding: .2em;
+}

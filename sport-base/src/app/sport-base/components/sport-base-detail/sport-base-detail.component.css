@@ -1,0 +1,133 @@
+.detail {
+  color: white;
+  font-size: 1rem;
+  margin: 0 2em;
+  background-color: #11172B;
+  padding: 1em;
+}
+
+.detail-header {
+  border-bottom: 2px solid gray;
+  padding-bottom: 1em;
+}
+
+.detail-title {
+  margin: 0;
+  padding: 1.5em .5em;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  font-size: 2.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: white;
+}
+
+.detail-extras {
+  display: flex;
+  border-bottom: 2px solid gray;
+  padding-bottom: 1em;
+}
+
+.detail-gallery {
+  flex: 2;
+  margin: 1em;
+  padding: 0 1em;
+}
+
+.detail-map {
+  flex: 1;
+  margin: 1em;
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.gallery-frame {
+  padding: .2em;
+}
+
+img {
+  display: block;
+  width: 5em;
+  height: 5em;
+  cursor: pointer;
+  transition: all 0.18s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.detail-address,
+.sports {
+  font-size: 1.5em;
+  color: white;
+  font-weight: 600;
+}
+
+span {
+  font-size: .7em;
+  color: white;
+  font-weight: normal;
+}
+
+.detail-content {
+  display: flex;
+  border-bottom: 2px solid gray;
+  padding-bottom: 1em;
+}
+
+.detail-content__description {
+  flex: 2;
+  margin: 1em;
+}
+
+.detail-content__infrastructure {
+  flex: 1;
+  margin: 1em;
+}
+
+h3 {
+  font-size: 1.8rem;
+  padding: .5em;
+}
+
+h4 {
+  font-size: 1.4rem;
+  padding: .5em 0;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6em;
+}
+
+.detail-actions {
+  padding: 1em;
+  border-bottom: 2px solid gray;
+}
+
+.base-comments {
+  font-size: 1rem;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 1em;
+  color: white;
+  padding: .6rem;
+  text-transform: lowercase;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  outline: none;
+  transition: all 0.18s ease-in-out;
+  margin: .5em;
+}
+
+.base-comments:hover {
+  color: white;
+  background: #333333;
+}

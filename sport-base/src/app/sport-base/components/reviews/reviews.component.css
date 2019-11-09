@@ -1,0 +1,105 @@
+.comment {
+  font-size: 1rem;
+  border: 1px solid white;
+  border-radius: .5em;
+  padding: 1em;
+}
+
+label {
+  font-size: 1.4em;
+  padding: .3em;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+}
+
+textarea {
+  font-size: 1.4em;
+  line-height: 2em;
+  width: 100%;
+  outline: none;
+  color: white;
+  border: none;
+  padding: .5em;
+  border-bottom: 2px solid gray;
+  background: transparent;
+  resize: none;
+  padding-left: 2em;
+  margin-bottom: .5em;
+}
+
+textarea:focus {
+  background-color: lightslategrey;
+  color: black;
+}
+
+button {
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: .5em;
+  text-transform: lowercase;
+  padding: .6em;
+  margin: .8em;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.18s ease-in-out;
+  text-align: right;
+}
+
+button:hover {
+  color: white;
+  background: #333;
+}
+
+.container {
+  font-size: 1rem;
+}
+
+.positive-action input {
+  display: none;
+}
+
+.positive-action label {
+  font-size: 1rem;
+  position: relative;
+  z-index: 30;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  width: 2.4em;
+  height: 2.4em;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: transparent;
+  display: block;
+}
+
+input:checked + label {
+  border: 2px solid green;
+  background: #0074D9;
+}
+
+input:checked + label:hover {
+  background: #0074D9;
+}
+
+.positive-action label:after {
+  content: "🤜";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 31;
+}
+
+.positive-action input:checked + label:after {
+  content: "👍";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 31;
+}
+

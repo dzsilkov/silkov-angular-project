@@ -1,0 +1,9 @@
+:host {
+  flex: 1 0 30em;
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+}
+

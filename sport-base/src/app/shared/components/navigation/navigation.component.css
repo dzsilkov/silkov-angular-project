@@ -1,0 +1,38 @@
+:host {
+  background-color: #11172B;
+}
+
+.wrapper {
+  background-color: #11172B;
+  margin: 0 auto;
+}
+
+.nav-link {
+  letter-spacing: .1em;
+  color: #00BFFF;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 3.6em;
+  padding: 0 1em;
+  border-bottom: 2px solid #11172B;
+  outline: none;
+  cursor: pointer;
+  display: block;
+}
+
+.nav-link.active {
+  color: gold;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid gold;
+}
+
+.navbar-nav {
+  background-color: #11172B;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row wrap;
+}
