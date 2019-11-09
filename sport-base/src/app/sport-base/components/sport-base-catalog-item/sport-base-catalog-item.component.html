@@ -13,6 +13,6 @@
     </div>
     <h3 class="card__title">{{sportBase.name}}</h3>
     <span class="card__text"></span>
-    <button (click)=click(sportBase.id) class="card__actions" [routerLink]="sportBase.id">Подробнее</button>
+    <button (click)=click(sportBase.id) class="card__actions" [routerLink]="[sportBase.id]">Подробнее</button>
   </div>
 </div>

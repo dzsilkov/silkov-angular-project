@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {DataBaseService} from "../../../services/data-base.service";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SportBase} from "../../models/sport-base";
 import {AuthService} from "../../../auth/services/auth.service";
 import {Router} from "@angular/router";
+import {SportBasesService} from "../../services/sport-bases.service";
 
 @Component({
   selector: 'app-add-sport-base',
@@ -33,7 +33,7 @@ export class AddSportBaseComponent implements OnInit {
   isLoggedIn: boolean;
   addBaseForm: FormGroup;
 
-  constructor(private baseService: DataBaseService,
+  constructor(private baseService: SportBasesService,
               private formBuilder: FormBuilder,
               private authService: AuthService,
               private router: Router,
@@ -93,6 +93,6 @@ export class AddSportBaseComponent implements OnInit {
     const newBase: SportBase = this.formAddSportBase.value;
     this.baseService.newSportBase(newBase);
     this.formAddSportBase.reset();
-    this.router.navigate([`/sport-bases/`]);
+    this.router.navigate([`catalog`]);
   }
 }

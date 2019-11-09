@@ -6,4 +6,5 @@ export interface SportBasesApp {
   formStatus: string;
   formEditing: boolean;
   totalSportBases: number;
+  sportBase: SportBase,
 }

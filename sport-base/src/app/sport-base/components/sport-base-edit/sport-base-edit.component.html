@@ -93,15 +93,6 @@
         formControlName="description"
       >
   </textarea>
-      <!--<div-->
-      <!--class="error-content"-->
-      <!--*ngIf="required('phone')">-->
-      <!--phone is required-->
-      <!--</div>-->
-      <!--<div-->
-      <!--class="error-content"-->
-      <!--*ngIf="invalid">-->
-      <!--</div>-->
     </div>
     <div class="infrastructureBasic">
       <label for="baseInfrastructureBasic">Основная спортивная инфраструктура:</label><br>
@@ -163,6 +154,12 @@
       </button>
     </div>
     <div class="addBaseActions">
+      <button
+        class="action"
+        (click)="(return())"
+      >
+        Отменить
+      </button>
       <button class="action"
               type="submit"
               [disabled]="formEditSportBase.invalid">

@@ -47,7 +47,7 @@ import {SportBaseDetailResolve} from "./components/sport-base-detail/sport-base-
     SearchSportBaseService,
 
     // SportBasesResolve,
-    // SportBaseDetailResolve,
+    SportBaseDetailResolve,
     SportBasesService,
     SportBasesFirestoreService,
     SportBasesAppStore,
