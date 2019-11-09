@@ -4,46 +4,47 @@ import {UserStoreService} from "./user-store.service";
 import {User} from "../models/user";
 import {Observable} from "rxjs/internal/Observable";
 import {map, switchMap, tap} from "rxjs/operators";
-import {AuthService} from "../auth.service";
+import {AuthService} from "./auth.service";
 
 @Injectable()
 export class UserService {
-
-  isLoggedIn;
-  loggedInUser;
-  showRegister;
 
   constructor(
     private fireStore: UserFirestoreService,
     private store: UserStoreService,
     private afAuth: AuthService,
   ) {
-    this.afAuth.getAuth().subscribe(auth => {
-      if (auth) {
-        console.log('auth', auth);
-        this.isLoggedIn = true;
-        this.loggedInUser = auth.email;
-      } else {
-        this.isLoggedIn = false;
-      }
-    });
-
-    this.showRegister = true;
-
-    this.fireStore.collection$().pipe(
-      tap(users => {
-        this.store.patch({
-          loading: false,
-          users,
-          isLoggedIn: this.isLoggedIn,
-          loggedInUser: this.loggedInUser,
-          activeUser: users.find(user => {
-            console.log('activeUser', user);
-            return user.email === this.loggedInUser
+    this.afAuth.getAuth().pipe(
+      tap(auth => {
+        if (auth) {
+          this.store.patch({
+            loading: false,
+            isLoggedIn: true,
+            isLoggedOut: false,
+          })
+        } else {
+          this.store.patch({
+            loading: false,
+            isLoggedIn: false,
+            isLoggedOut: true,
+          })
+        }
+      }),
+      switchMap((value) => {
+        const query = value.email;
+        return this.fireStore.collection$(ref => {
+          return ref.where('email', '==', query);
+        }).pipe(
+          tap(user => {
+            this.store.patch({
+              loading: false,
+              activeUser: user[0],
+              isAdmin: user[0].admin
+            }, `user active subscription`)
           }),
-        }, `users collection subscription`)
+        )
       })
-    ).subscribe()
+    ).subscribe();
   }
 
 
@@ -65,9 +66,15 @@ export class UserService {
     )
   }
 
-  get loggedInUser$(): Observable<string> {
+  get isLoggedOut$(): Observable<boolean> {
     return this.store.state$.pipe(
-      map(state => state.loggedInUser)
+      map(state => state.isLoggedOut)
+    )
+  }
+
+  get isAdmin$(): Observable<boolean> {
+    return this.store.state$.pipe(
+      map(state => state.isAdmin)
     )
   }
 
@@ -79,7 +86,7 @@ export class UserService {
     )
   }
 
-  get activeUser$(): Observable<User> {
+  get activeUser$(): Observable<User | string> {
     return this.store.state$.pipe(
       map(state => state.activeUser)
     )
@@ -90,12 +97,91 @@ export class UserService {
   }
 
   create(user: User) {
-    this.store.patch({ loading: true, users: [], formStatus: 'Saving...' }, "employee create");
-    return this.fireStore.create(user).then(_ => {
-      this.store.patch({ formStatus: 'Saved!' }, "user create SUCCESS");
-      setTimeout(() => this.store.patch({ formStatus: '' }, "user create timeout reset formStatus"), 2000)
-    }).catch(err => {
-      this.store.patch({ loading: false, formStatus: 'An error ocurred' }, "user create ERROR")
-    })
+    this.store.patch({
+        loading: true,
+        users: [],
+        formStatus: 'Saving...'
+      },
+      "user create");
+    return this.fireStore.create(user)
+      .then(_ => {
+        this.store.patch({formStatus: 'Saved!'}, "user create SUCCESS");
+        setTimeout(() => this.store.patch({formStatus: ''}, "user create timeout reset formStatus"), 2000)
+      }).catch(err => {
+        this.store.patch({loading: false, formStatus: 'An error ocurred'}, "user create ERROR")
+      })
+  }
+
+  logOut() {
+    this.store.patch({
+      loading: true,
+      isLoggedIn: false,
+      isAdmin: false,
+      isLoggedOut: false,
+      activeUser: 'guest',
+      formStatus: 'Saving...'
+    }, "user logOut");
+    return this.afAuth.signOut()
+      .then(_ => {
+        this.store.patch({
+          isLoggedOut: true,
+          loading: false,
+          isAdmin: false,
+          isLoggedIn: false,
+          formStatus: 'logOut'
+        }, "user logOut SUCCESS");
+        setTimeout(() => this.store.patch({
+          loading: false,
+          formStatus: ''
+        }, "user create timeout reset formStatus"), 2000)
+      }).catch(err => {
+        this.store.patch({loading: false, formStatus: 'An error ocurred'}, "user logOut ERROR")
+      })
+  }
+
+  logIn(email, password) {
+    this.store.patch({
+      loading: true,
+      isLoggedIn: true,
+      isAdmin: false,
+      isLoggedOut: false,
+      activeUser: '',
+      formStatus: 'Saving...'
+    }, "user logOut");
+    return this.afAuth.login(email, password)
+      .then(_ => {
+        this.store.patch({
+          isLoggedOut: false,
+          isLoggedIn: true,
+          loading: false,
+          formStatus: 'logIn'
+        }, "user logIn SUCCESS");
+        setTimeout(() => this.store.patch({formStatus: ''}, "user create timeout reset formStatus"), 2000)
+      }).catch(err => {
+        this.store.patch({loading: false, formStatus: 'An error ocurred'}, "user logIn ERROR")
+      })
+  }
+
+  signUp(email, password) {
+    this.store.patch({
+      loading: true,
+      isLoggedIn: true,
+      isLoggedOut: false,
+      isAdmin: false,
+      activeUser: 'guest',
+      formStatus: 'Saving...'
+    }, "user logOut");
+    return this.afAuth.signup(email, password)
+      .then(_ => {
+        this.store.patch({
+          isLoggedOut: false,
+          loading: false,
+          isLoggedIn: true,
+          formStatus: 'signUp'
+        }, "user signUp SUCCESS");
+        setTimeout(() => this.store.patch({formStatus: ''}, "user create timeout reset formStatus"), 2000)
+      }).catch(err => {
+        this.store.patch({loading: false, formStatus: 'An error ocurred'}, "user signUp ERROR")
+      })
   }
 }

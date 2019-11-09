@@ -6,22 +6,18 @@ import {GoTopComponent} from "./components/go-top/go-top.component";
 import {LoadingSpinnerComponent} from "./components/loading-spinner/loading-spinner.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {TitleComponent} from "./components/title/title.component";
-import {AuthService} from "../auth/auth.service";
+import {AuthService} from "../auth/services/auth.service";
 import {DataBaseService} from "../services/data-base.service";
 import {UserService} from "../auth/services/user.service";
 import {HeaderComponent} from "./components/header/header.component";
 import {NavigationComponent} from "./components/navigation/navigation.component";
 import {BreadcrumbComponent} from "./components/breadcrumb/breadcrumb.component";
-import {SliderPaginationComponent} from "./components/slider-pagination/slider-pagination.component";
-import {SliderComponent} from "./components/slider/slider.component";
-import {SlideComponent} from "./components/slide/slide.component";
-import {SliderControlComponent} from "./components/slider-control/slider-control.component";
-import {ExtrasServicesComponent} from "./components/extras-services/extras-services.component";
-import {DashboardComponent} from "./components/dashboard/dashboard.component";
+import {ContactsComponent} from "./components/contacts/contacts.component";
 
 
 @NgModule({
   declarations: [
+    ContactsComponent,
     GoTopComponent,
     LoadingSpinnerComponent,
     FooterComponent,
@@ -29,12 +25,7 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
     HeaderComponent,
     NavigationComponent,
     BreadcrumbComponent,
-    DashboardComponent,
-    SliderComponent,
-    SliderPaginationComponent,
-    SliderControlComponent,
-    SlideComponent,
-    ExtrasServicesComponent,
+
   ],
   imports: [
     CommonModule,
@@ -47,6 +38,8 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
     HeaderComponent,
     NavigationComponent,
     BreadcrumbComponent,
+    TitleComponent,
+    ContactsComponent
   ],
   providers: [
     AuthService,

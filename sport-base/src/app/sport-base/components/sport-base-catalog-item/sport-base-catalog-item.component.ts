@@ -8,7 +8,7 @@ import {SportBase} from "../../models/sport-base";
 })
 export class SportBaseCatalogItemComponent {
   @Input()
-  private sportBase: SportBase;
+  sportBase: SportBase;
 
   @Output()
   filterCountry: EventEmitter<string> = new EventEmitter<string>();

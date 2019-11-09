@@ -5,6 +5,7 @@ import {tap, map} from "rxjs/operators";
 import {Observable} from "rxjs/internal/Observable";
 import {SportBase} from "../models/sport-base";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Article} from "../../articles/models/article";
 
 @Injectable()
 export class SportBasesService {
@@ -84,6 +85,10 @@ export class SportBasesService {
       .catch(err => {
         this.store.patch({loading: false, formStatus: 'An error ocurred'}, "sportBase update ERROR")
       })
+  }
+
+  getSportBase(id: string): Observable<SportBase> {
+    return this.fireStore.doc$(id)
   }
 
 }

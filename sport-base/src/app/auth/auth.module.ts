@@ -10,7 +10,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {AuthRoutingModule} from "./auth-routing/auth-routing.module";
 import {AuthComponent} from "./components/auth/auth.component";
 import {UserComponent} from "./components/user/user.component";
-import {AuthService} from "./auth.service";
+import {AuthService} from "./services/auth.service";
 import {UserFirestoreService} from "./services/user-firestore.service";
 import {UserStoreService} from "./services/user-store.service";
 import {UserService} from "./services/user.service";
@@ -37,7 +37,7 @@ import {UserService} from "./services/user.service";
     AuthService,
     UserService,
     UserFirestoreService,
-    UserStoreService
+    UserStoreService,
   ]
 })
 export class AuthModule {

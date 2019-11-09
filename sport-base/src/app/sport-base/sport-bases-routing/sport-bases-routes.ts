@@ -1,13 +1,13 @@
 import {Routes} from "@angular/router";
 
 import {AuthGuard} from "../../auth/auth.guard";
-import {SportBasesCatalogComponent} from "../containers/sport-bases-catalog/sport-bases-catalog.component";
+import {SportBasesCatalogComponent} from "../components/sport-bases-catalog/sport-bases-catalog.component";
 import {SportBaseEditComponent} from "../components/sport-base-edit/sport-base-edit.component";
 import {AddSportBaseComponent} from "../components/add-sport-base/add-sport-base.component";
-import {SportBaseDetailComponent} from "../containers/sport-base-detail/sport-base-detail.component";
+import {SportBaseDetailComponent} from "../components/sport-base-detail/sport-base-detail.component";
 import {SearchSportBaseComponent} from "../components/search-sport-base/search-sport-base.component";
 import {SportBasesAppComponent} from "../components/sport-bases-app/sport-bases-app.component";
-import {SportBaseDetailResolve} from "../containers/sport-base-detail/sport-base-detail-resolve";
+import {SportBaseDetailResolve} from "../components/sport-base-detail/sport-base-detail-resolve";
 
 export const sportBasesRoutes: Routes = [
   {

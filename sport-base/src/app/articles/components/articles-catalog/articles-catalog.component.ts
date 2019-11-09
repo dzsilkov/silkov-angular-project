@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {Article} from '../../models/article';
 import {ArticlesService} from '../../services/articles.service';
+import {Observable} from "rxjs/internal/Observable";
+import {ActivatedRoute, Router} from "@angular/router";
+import {SportBasesService} from "../../../sport-base/services/sport-bases.service";
 
 @Component({
   selector: 'app-articles-catalog',
@@ -11,14 +14,21 @@ import {ArticlesService} from '../../services/articles.service';
 
 export class ArticlesCatalogComponent implements OnInit {
 
-  articles: Article[];
-  title = 'Статьи';
+  loading$: Observable<boolean>;
+  articles$: Observable<Article[]>;
+  noResults$: Observable<boolean>;
 
-  constructor(private articleService: ArticlesService) {}
+
+  constructor(
+    private articlesService: ArticlesService,
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {
+  }
 
   ngOnInit() {
-    this.articleService.getArticles()
-      .subscribe((data: Article[]) => this.articles = data);
-    console.log(this.articles);
+    this.loading$ = this.articlesService.loading$;
+    this.noResults$ = this.articlesService.noResults$;
+    this.articles$ = this.articlesService.articles$;
   }
 }

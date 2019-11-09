@@ -19,8 +19,8 @@ export abstract class FirestoreService<T> {
           return null;
         } else {
           const data = action.payload.data() as T;
-          data.id = action.payload.id;
-          return data;
+          const id = action.payload.id;
+          return {id, ...data};
         }
       }),
       tap(r => {
@@ -38,8 +38,8 @@ export abstract class FirestoreService<T> {
       map(changes => {
         return changes.map(action => {
           const data = action.payload.doc.data() as T;
-          data.id = action.payload.doc.id;
-          return data;
+          const id = action.payload.doc.id;
+          return {id, ...data};
         });
       }),
       tap(r => {

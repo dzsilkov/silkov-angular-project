@@ -8,6 +8,7 @@
   border-radius: 0.25em;
   display: flex;
   flex-direction: row;
+  max-height: 16em;
 }
 
 .article-card__item:hover .article-card__image {
@@ -15,6 +16,8 @@
 }
 
 .article-card__image {
+  flex: 1 0 auto;
+  height: 100%;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   filter: contrast(70%);
@@ -24,12 +27,13 @@
 
 img{
   display: block;
+  width: 16em;
   height: 16em;
 }
 
 .article-card__content {
   display: flex;
-  /*flex: 1 1 auto;*/
+  flex: 3 1 auto;
   flex-direction: column;
   justify-content: space-between;
   padding: 1em;

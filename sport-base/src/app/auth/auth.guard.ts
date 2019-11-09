@@ -4,7 +4,9 @@ import {Observable} from 'rxjs';
 import {map} from "rxjs/operators";
 import {AngularFireAuth} from 'angularfire2/auth';
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
@@ -16,7 +18,7 @@ export class AuthGuard implements CanActivate {
     return this.afAuth.authState.pipe(
       map(auth => {
         if (!auth) {
-          this.router.navigate(['login']);
+          this.router.navigate(['auth/login']);
           return false;
         } else {
           return true;

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {DataBaseService} from "../../../services/data-base.service";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SportBase} from "../../models/sport-base";
-import {AuthService} from "../../../auth/auth.service";
+import {AuthService} from "../../../auth/services/auth.service";
 import {Router} from "@angular/router";
 
 @Component({

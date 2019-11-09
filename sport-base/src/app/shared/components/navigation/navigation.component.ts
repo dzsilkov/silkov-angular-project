@@ -20,7 +20,7 @@ export class NavigationComponent {
       exact: true
     },
     {
-      link: 'sport-bases',
+      link: 'catalog',
       name: 'Каталог',
       exact: true
     },

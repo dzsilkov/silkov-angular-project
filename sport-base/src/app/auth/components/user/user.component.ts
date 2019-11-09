@@ -11,7 +11,7 @@ import {Observable} from "rxjs/internal/Observable";
 export class UserComponent implements OnInit {
   loading$: Observable<boolean>;
   noResults$: Observable<boolean>;
-  activeUser$: Observable<User>;
+  activeUser$: Observable<User | any>;
 
   constructor(
     private userService: UserService

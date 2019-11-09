@@ -1,9 +1,18 @@
+<div *ngIf="loading$ | async">
+  Loading...
+</div>
+<div *ngIf="noResults$ | async">
+  No results
+</div>
 <section>
-  <h2 [title]="title"></h2>
-  <div class="article">
-    <div *ngFor="let article of articles">
-      <app-article-card [article]="article"></app-article-card>
+  <h2 class="title">статьи</h2>
+  <div *ngIf="articles$ | async; let articles; else loading">
+    <div class="article">
+      <div *ngFor="let article of articles">
+        <app-article-card [article]="article"></app-article-card>
+      </div>
     </div>
+    <div *ngIf="articles.length === 0">No results, try clearing filters</div>
   </div>
 </section>
-
+<ng-template #loading>Loading...</ng-template>

@@ -3,13 +3,13 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 
 import {NotFoundComponent} from "../not-found/not-found.component";
-import {ContactsComponent} from "../shared/components/contacts/contacts.component";
 import {AuthGuard} from "../auth/auth.guard";
-import {DashboardComponent} from "../shared/components/dashboard/dashboard.component";
+import {ContactsComponent} from "../shared/components/contacts/contacts.component";
 
 export const appRoutes: Routes = [
-  {path: '', component: DashboardComponent, data: {breadcrumb: 'Главная'}},
-  {path: 'sport-bases',  loadChildren: () => import('../sport-base/sport-bases.module').then(m => m.SportBasesModule)},
+  {path: '', redirectTo: 'sport-bases', pathMatch: 'full' },
+  {path: 'sport-bases',  loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardModule)},
+  {path: 'catalog',  loadChildren: () => import('../sport-base/sport-bases.module').then(m => m.SportBasesModule)},
   {path: 'auth',  loadChildren: () => import('../auth/auth.module').then(m => m.AuthModule)},
   {path: 'articles',  loadChildren: () => import('../articles/articles.module').then(m => m.ArticlesModule)},
   {path: 'contacts', component: ContactsComponent, data: {breadcrumb: 'Контакты'}},

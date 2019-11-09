@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
-import {AuthService} from "../../auth.service";
+import {AuthService} from "../../services/auth.service";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +10,7 @@ import {AuthService} from "../../auth.service";
   styleUrls: ['./signup.component.css']
 })
 
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   type: string = 'password';
   signup = new FormGroup({
     email: new FormControl(''),
@@ -23,15 +23,10 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private userService: UserService,
     private router: Router,
     // private flashMessage: FlashMessagesService
-  ) {
-  }
-
-  ngOnInit() {
-
-  }
-
+  ) {}
 
   onSubmit() {
     this.authService.signup(this.signup.value.email, this.signup.value.password)
@@ -40,13 +35,13 @@ export class SignupComponent implements OnInit {
           id: this.generateId(),
           admin: false,
         });
-        // this.userService.newUser(this.signup.value);
+        this.userService.create(this.signup.value);
         console.log('signup', this.signup.value);
         this.clear();
         // this.flashMessage.show('You are now registered and logged in', {
         //   cssClass: 'alert-success', timeout: 4000
         // });
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
       })
       .catch(err => {
         this.clear();

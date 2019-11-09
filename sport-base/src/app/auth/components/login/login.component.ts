@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {AuthService} from "../../auth.service";
 import {Router} from "@angular/router";
+import {Observable} from "rxjs/internal/Observable";
+import {tap} from "rxjs/operators";
+import {UserService} from "../../services/user.service";
 
 
 @Component({
@@ -12,6 +14,10 @@ import {Router} from "@angular/router";
 })
 
 export class LoginComponent implements OnInit {
+  loading$: Observable<boolean>;
+  noResults$: Observable<boolean>;
+  isLoggedIn$: Observable<boolean>;
+
   type: string = 'password';
   login = new FormGroup({
     email: new FormControl(''),
@@ -19,29 +25,33 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private authService: AuthService,
+    private userService: UserService,
     private router: Router,
     // private flashMessage: FlashMessagesService
   ) {
   }
 
   ngOnInit() {
-    this.authService.getAuth().subscribe(auth => {
-          if (auth) {
-            this.router.navigate(['home']);
-          }
-        });
+    this.loading$ = this.userService.loading$;
+    this.noResults$ = this.userService.noResults$;
+    this.userService.isLoggedIn$.pipe(
+     tap(isLoggedIn => {
+       if(isLoggedIn) {
+         this.router.navigate([''])
+       }
+     })
+    )
   }
 
   onSubmit() {
     const email = this.login.value.email;
     const password = this.login.value.password;
-    this.authService.login(email, password)
+    this.userService.logIn(email, password)
       .then(res => {
         // this.flashMessage.show('You are now logged in', {
         //   cssClass: 'alert-success', timeout: 4000
         // });
-        this.router.navigate(['home']);
+        this.router.navigate(['']);
       })
       .catch(err => {
         // this.flashMessage.show(err.message, {

@@ -3,9 +3,9 @@ import {User} from "../models/user";
 export interface UserState {
   loading: boolean;
   users: User[];
-  activeUser: User;
+  activeUser: User | any;
   formStatus: string;
   isLoggedIn: boolean;
-  admin: boolean;
-  loggedInUser: string,
+  isAdmin: boolean,
+  isLoggedOut: boolean,
 }
