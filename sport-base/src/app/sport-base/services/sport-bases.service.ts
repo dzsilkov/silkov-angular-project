@@ -16,7 +16,6 @@ export class SportBasesService {
   ) {
     this.fireStore.collection$().pipe(
       tap(sportBases => {
-        console.log(sportBases);
         this.store.patch({
           loading: false,
           sportBases,

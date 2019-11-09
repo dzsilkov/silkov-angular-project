@@ -3,7 +3,6 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from "@angular/router";
 import {Observable} from "rxjs/internal/Observable";
-import {tap} from "rxjs/operators";
 import {UserService} from "../../services/user.service";
 
 
