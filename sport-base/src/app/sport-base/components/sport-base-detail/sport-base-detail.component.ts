@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Params, Router} from "@angular/router";
-import {delay, pluck, switchMap, tap} from "rxjs/operators";
+import {delay, map, pluck, switchMap, tap} from "rxjs/operators";
 import {SportBase} from "../../models/sport-base";
 import {Observable} from "rxjs/internal/Observable";
 import {SportBasesService} from "../../services/sport-bases.service";
@@ -34,19 +34,16 @@ export class SportBaseDetailComponent implements OnInit {
     this.route.paramMap
       .pipe(
         switchMap((params: any) => {
-          return this.baseService.getSportBase(params.get('id'))
+          return this.baseService.getSportBase(params.get('id'));
         }),
-      );
-    this.route.data
-      .subscribe((data: SportBase) => this.sportBase = data
-      );
+      ).subscribe(data => this.sportBase$ = data)
   }
 
   leaveComment() {
     this.review = true;
   }
 
-  reviewEnd() {
+  reviewEnd($event) {
     this.review = false;
   }
 }

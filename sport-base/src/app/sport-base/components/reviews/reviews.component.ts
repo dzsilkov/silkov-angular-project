@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SportBase} from "../../models/sport-base";
 import {ActivatedRoute, Router} from "@angular/router";
-import {DataBaseService} from "../../../services/data-base.service";
+import {SportBasesService} from "../../services/sport-bases.service";
 
 @Component({
   selector: 'app-reviews',
@@ -13,6 +13,7 @@ export class ReviewsComponent implements OnInit {
 
   @Input()
   sportBase: SportBase;
+
   @Output()
   endReview: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -20,7 +21,7 @@ export class ReviewsComponent implements OnInit {
   comment: Comment;
 
   constructor(
-    private baseService: DataBaseService,
+    private baseService: SportBasesService,
     private router: Router,
     private route: ActivatedRoute,
   ) {

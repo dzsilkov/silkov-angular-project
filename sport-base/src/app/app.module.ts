@@ -9,7 +9,6 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AppComponent} from './app.component';
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {AuthService} from "./auth/services/auth.service";
-import {DataBaseService} from "./services/data-base.service";
 import {UserFirestoreService} from "./auth/services/user-firestore.service";
 import {UserStoreService} from "./auth/services/user-store.service";
 import {UserService} from "./auth/services/user.service";
@@ -31,7 +30,6 @@ import {DashboardStore} from "./dashboard/services/dashboard-store";
   ],
 
   providers: [
-    DataBaseService,
     AuthService,
     UserService,
     UserFirestoreService,

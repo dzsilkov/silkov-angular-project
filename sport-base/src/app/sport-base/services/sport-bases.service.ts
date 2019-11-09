@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
 import {SportBasesFirestoreService} from "./sport-bases-firestore.service";
 import {SportBasesAppStore} from "./sport-bases-app-store";
-import {tap, map} from "rxjs/operators";
+import {tap, map, delay} from "rxjs/operators";
 import {Observable} from "rxjs/internal/Observable";
 import {SportBase} from "../models/sport-base";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Article} from "../../articles/models/article";
 
 @Injectable()
 export class SportBasesService {
@@ -26,6 +25,12 @@ export class SportBasesService {
         }, `sportBases collection subscription`)
       })
     ).subscribe()
+  }
+
+  get sportBase$(): Observable<SportBase> {
+    return this.store.state$.pipe(
+      map(state => state.loading ? {} : state.sportBase)
+    )
   }
 
   get sportBases$(): Observable<SportBase[]> {
@@ -60,7 +65,7 @@ export class SportBasesService {
     )
   }
 
-  create(sportBase: SportBase) {
+  newSportBase(sportBase: SportBase) {
     this.store.patch({loading: true, sportBases: [], formStatus: 'Saving...'}, "sportBase create");
     return this.fireStore.create(sportBase)
       .then(_ => {
@@ -79,7 +84,7 @@ export class SportBasesService {
       })
   }
 
-  update(sportBase: SportBase, id: string): any {
+  updateSportBase(sportBase: SportBase, id: string): any {
     this.store.patch({loading: true, sportBases: []}, "sportBase update");
     return this.fireStore.update(sportBase, id)
       .catch(err => {
@@ -88,7 +93,16 @@ export class SportBasesService {
   }
 
   getSportBase(id: string): Observable<SportBase> {
-    return this.fireStore.doc$(id)
+    return this.fireStore.doc$(id).pipe(
+      tap(sportBase => {
+        console.log(sportBase);
+        this.store.patch({
+          loading: false,
+          sportBase,
+          formStatus: '',
+        }, `sportBase collection subscription`)
+      })
+    )
   }
 
 }

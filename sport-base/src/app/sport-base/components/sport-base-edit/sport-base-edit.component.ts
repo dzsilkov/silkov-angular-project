@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {DataBaseService} from "../../../services/data-base.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {switchMap} from "rxjs/operators";
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SportBase} from "../../models/sport-base";
+import {SportBasesService} from "../../services/sport-bases.service";
 
 @Component({
   selector: 'app-sport-base-edit',
@@ -30,7 +30,7 @@ export class SportBaseEditComponent implements OnInit {
   baseId: string;
 
   constructor(
-    private baseService: DataBaseService,
+    private baseService: SportBasesService,
     private router: Router,
     private route: ActivatedRoute,
   ) {}
@@ -89,11 +89,16 @@ export class SportBaseEditComponent implements OnInit {
   onDeleteImage(index: number) {
     (<FormArray>this.formEditSportBase.get('images')).removeAt(index);
   }
+  return() {
+    this.formEditSportBase.reset();
+    this.router.navigate([`/catalog/${this.baseId}`]);
+
+  }
 
   onSubmit() {
     const updateBase: SportBase = this.formEditSportBase.value;
     this.baseService.updateSportBase(updateBase, this.baseId);
     this.formEditSportBase.reset();
-    this.router.navigate([`/sport-bases/${this.baseId}`]);
+    this.router.navigate([`/catalog/${this.baseId}`]);
   }
 }
