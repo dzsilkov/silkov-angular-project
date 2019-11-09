@@ -1,5 +1,5 @@
 :host  {
-  background-color: black;
+  background-color: #11172B;
   width: 100%;
 }
 
@@ -8,8 +8,8 @@
   justify-content: center;
   flex-flow: row wrap;
   font-size: 1rem;
-  background: black;
-  color: white;
+  background: #11172B;
+  color: #ffffff;
 }
 
 .contacts-coll {
@@ -29,7 +29,7 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   text-align: center;
-  color: white;
+  color: #ffffff;
 }
 
 .contacts-card h3 {
@@ -37,7 +37,7 @@
   font-size: 2.2em;
   padding: .5em;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
   text-align: left;
 }
 
@@ -45,7 +45,7 @@
   font-family: 'Lato', Calibri, Arial, sans-serif;
   font-size: 1.2em;
   padding: .3em .3em;
-  color: white;
+  color: #ffffff;
 }
 
 .soc-link {

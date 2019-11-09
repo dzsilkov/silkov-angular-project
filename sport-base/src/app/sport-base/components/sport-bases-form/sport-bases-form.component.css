@@ -1,12 +1,12 @@
 :host {
-  background-color: black;
+  background-color: #11172B;
   width: 100%;
 }
 
 .sport-base-form {
   font-size: 1rem;
   margin: 0 3em;
-  background-color: black;
+  background-color: #11172B;
   color: white;
   border: 1px solid white;
   border-radius: .9em;

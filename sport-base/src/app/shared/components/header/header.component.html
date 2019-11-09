@@ -26,7 +26,7 @@
         </li>
         <li *ngIf="isLoggedIn" class="nav-item">
           <span>Active User: </span>
-          <a routerLink="/auth/user" class="nav-link">{{ (activeUser$ | async).firstName }}</a>
+          <a routerLink="/auth/user" class="nav-link nav-link-user" >{{ (activeUser$ | async).firstName }}</a>
         </li>
         <li *ngIf="isLoggedIn">
           <a href="#" (click)="logoutClick($event)" class="nav-link">Logout</a>
@@ -54,12 +54,10 @@
   </div>
 </section>
 <ng-template #guest>
-  <div>Гость</div>
+  <div class="toolbar-actions">Гость</div>
 </ng-template>
-<app-breadcrumb></app-breadcrumb>
-<!--<section class="header-outlet">-->
-<!--<app-form-search [show]="searchShow">-->
-<!--</app-form-search>-->
-<!--<flash-messages></flash-messages>-->
-<!--</section>-->
+<section class="header-outlet">
+  <app-breadcrumb></app-breadcrumb>
+  <flash-messages></flash-messages>
+</section>
 

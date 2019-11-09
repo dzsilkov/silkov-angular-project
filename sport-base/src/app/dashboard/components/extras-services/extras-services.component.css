@@ -1,6 +1,6 @@
 :host {
   flex: 0 0 auto;
-  background-color: black;
+  background-color: #11172B;
   padding: 1em;
   border-bottom: 2px solid gray;
 }
@@ -11,7 +11,7 @@
   justify-content: space-around;
   flex-flow: row wrap;
   font-size: 1rem;
-  background: black;
+  background-color: #11172B;
   color: white;
 }
 

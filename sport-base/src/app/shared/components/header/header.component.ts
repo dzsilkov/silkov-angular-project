@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    // private flashMessage: FlashMessagesService,
+    private flashMessage: FlashMessagesService,
   ) {
   }
 
@@ -33,9 +33,9 @@ export class HeaderComponent implements OnInit {
   logoutClick(e) {
     this.userService.logOut();
     e.preventDefault();
-    // this.flashMessage.show('You are now logged out', {
-    //   cssClass: 'alert-success', timeout: 4000
-    // });
-    this.router.navigate(['']);
+    this.flashMessage.show('You are now logged out', {
+      cssClass: 'alert-success', timeout: 4000
+    });
+    this.router.navigate(['contacts']);
   }
 }

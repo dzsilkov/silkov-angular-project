@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
+import {promise} from "selenium-webdriver";
+import {map} from "rxjs/operators";
 
 @Injectable()
 export class AuthService {
@@ -23,7 +25,9 @@ export class AuthService {
   }
 
   getAuth() {
-    return this.afAuth.authState;
+    return this.afAuth.authState.pipe(
+      map(auth => auth),
+    );
   }
 
   signOut() {

@@ -10,14 +10,22 @@ import {ArticleDetailComponent} from "../components/article-detail/article-detai
 export const articlesRoutes: Routes = [
   {
     path: '', component: ArticlesComponent,
+    canActivate: [AuthGuard],
     children: [
-      {path: '', component: ArticlesCatalogComponent, data: {breadcrumb: 'Статьи'}},
-      {path: ':id', component: ArticleDetailComponent, data: {breadcrumb: 'Статья'}},
+      {
+        path: '',
+        component: ArticlesCatalogComponent,
+        data: {breadcrumb: 'Статьи'}
+        },
+      {
+        path: ':id',
+        component: ArticleDetailComponent,
+        data: {breadcrumb: 'Статья'}
+        },
       {
         path: 'add-article',
         component: AddArticleComponent,
         data: {breadcrumb: 'Добавить статью'},
-        canActivate: [AuthGuard]
       },
       {
         path: ':id/edit',

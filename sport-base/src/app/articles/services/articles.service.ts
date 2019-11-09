@@ -6,7 +6,9 @@ import {ArticleStoreService} from "./article-store.service";
 import {ArticleFirestoreService} from "./article-firestore.service";
 import {Article} from "../models/article";
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class ArticlesService {
   constructor(
     private router: Router,

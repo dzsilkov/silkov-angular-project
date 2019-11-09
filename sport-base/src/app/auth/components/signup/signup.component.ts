@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import { Router } from '@angular/router';
 import {AuthService} from "../../services/auth.service";
 import {UserService} from "../../services/user.service";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-signup',
@@ -25,7 +26,7 @@ export class SignupComponent {
     private authService: AuthService,
     private userService: UserService,
     private router: Router,
-    // private flashMessage: FlashMessagesService
+    private flashMessage: FlashMessagesService
   ) {}
 
   onSubmit() {
@@ -38,16 +39,16 @@ export class SignupComponent {
         this.userService.create(this.signup.value);
         console.log('signup', this.signup.value);
         this.clear();
-        // this.flashMessage.show('You are now registered and logged in', {
-        //   cssClass: 'alert-success', timeout: 4000
-        // });
-        this.router.navigate(['']);
+        this.flashMessage.show('You are now registered and logged in', {
+          cssClass: 'alert-success', timeout: 4000
+        });
+        this.router.navigate(['sport-bases']);
       })
       .catch(err => {
         this.clear();
-        // this.flashMessage.show(err.message, {
-        //   cssClass: 'alert-danger', timeout: 4000
-        // });
+        this.flashMessage.show(err.message, {
+          cssClass: 'alert-danger', timeout: 4000
+        });
       });
   }
 

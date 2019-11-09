@@ -1,5 +1,6 @@
-.container {
-  background-color: black;
+:host  {
+  background-color: #11172B;
+  width: 100%;
 }
 
 li:first-child {
@@ -10,10 +11,10 @@ li:first-child {
   display: flex;
   justify-content: flex-start;
   font-size: 1rem;
-  color: white;
-  background-color: black;
-  border-bottom: 2px solid gray;
+  color: #ffffff;
+  background-color: #11172B;
   margin: 0 3em;
+  border-bottom: 2px solid gray;
 }
 
 .breadcrumb-item {

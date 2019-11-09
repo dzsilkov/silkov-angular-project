@@ -2,7 +2,7 @@
   color: white;
   font-size: 1rem;
   margin: 0 2em;
-  background-color: black;
+  background-color: #11172B;
   padding: 1em;
 }
 
@@ -129,5 +129,5 @@ p {
 
 .base-comments:hover {
   color: white;
-  background: #333;
+  background: #333333;
 }

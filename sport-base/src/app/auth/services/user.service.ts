@@ -3,7 +3,7 @@ import {UserFirestoreService} from "./user-firestore.service";
 import {UserStoreService} from "./user-store.service";
 import {User} from "../models/user";
 import {Observable} from "rxjs/internal/Observable";
-import {map, switchMap, tap} from "rxjs/operators";
+import {map, pluck, switchMap, tap} from "rxjs/operators";
 import {AuthService} from "./auth.service";
 
 @Injectable()
@@ -16,6 +16,7 @@ export class UserService {
   ) {
     this.afAuth.getAuth().pipe(
       tap(auth => {
+        console.log('frgwere', auth);
         if (auth) {
           this.store.patch({
             loading: false,
@@ -30,8 +31,9 @@ export class UserService {
           })
         }
       }),
+      pluck('email'),
       switchMap((value) => {
-        const query = value.email;
+        const query = value;
         return this.fireStore.collection$(ref => {
           return ref.where('email', '==', query);
         }).pipe(

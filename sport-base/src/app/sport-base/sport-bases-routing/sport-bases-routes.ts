@@ -13,7 +13,7 @@ export const sportBasesRoutes: Routes = [
   {
     path: '',
     component: SportBasesAppComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

@@ -13,6 +13,7 @@ import {HeaderComponent} from "./components/header/header.component";
 import {NavigationComponent} from "./components/navigation/navigation.component";
 import {BreadcrumbComponent} from "./components/breadcrumb/breadcrumb.component";
 import {ContactsComponent} from "./components/contacts/contacts.component";
+import {FlashMessagesModule} from "angular2-flash-messages";
 
 
 @NgModule({
@@ -25,11 +26,12 @@ import {ContactsComponent} from "./components/contacts/contacts.component";
     HeaderComponent,
     NavigationComponent,
     BreadcrumbComponent,
-
   ],
   imports: [
     CommonModule,
     RouterModule,
+    FlashMessagesModule.forRoot(),
+
   ],
   exports: [
     GoTopComponent,

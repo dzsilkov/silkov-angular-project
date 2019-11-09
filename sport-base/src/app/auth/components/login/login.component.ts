@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    // private flashMessage: FlashMessagesService
+    private flashMessage: FlashMessagesService
   ) {
   }
 
@@ -35,11 +35,12 @@ export class LoginComponent implements OnInit {
     this.loading$ = this.userService.loading$;
     this.noResults$ = this.userService.noResults$;
     this.userService.isLoggedIn$.pipe(
-     tap(isLoggedIn => {
-       if(isLoggedIn) {
-         this.router.navigate([''])
-       }
-     })
+     // tap(isLoggedIn => {
+     //   if(isLoggedIn) {
+     //     this.router.navigate(['sport-bases'])
+     //   }
+     // }
+     // )
     )
   }
 
@@ -48,15 +49,15 @@ export class LoginComponent implements OnInit {
     const password = this.login.value.password;
     this.userService.logIn(email, password)
       .then(res => {
-        // this.flashMessage.show('You are now logged in', {
-        //   cssClass: 'alert-success', timeout: 4000
-        // });
-        this.router.navigate(['']);
+        this.router.navigate(['sport-bases']);
+        this.flashMessage.show('You are now logged in', {
+          cssClass: 'alert-success', timeout: 4000
+        });
       })
       .catch(err => {
-        // this.flashMessage.show(err.message, {
-        //   cssClass: 'alert-danger', timeout: 4000
-        // });
+        this.flashMessage.show(err.message, {
+          cssClass: 'alert-danger', timeout: 4000
+        });
       });
   }
 

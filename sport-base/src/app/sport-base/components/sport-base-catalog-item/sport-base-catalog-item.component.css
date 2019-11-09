@@ -6,7 +6,6 @@
   box-shadow: 0 0 0.5em 0.3em rgba(100, 149, 237, .3);
   overflow: hidden;
   color: #474747;
-  /*min-height: 70vh;*/
   border-radius: 0.25em;
   display: flex;
   flex-direction: column;

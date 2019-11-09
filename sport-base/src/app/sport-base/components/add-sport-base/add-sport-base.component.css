@@ -1,14 +1,14 @@
 :host {
-  background-color: black;
+  background-color: #11172B;
   width: 100%;
 }
 
 .add-base-form {
   font-size: 1rem;
   margin: 0 3em;
-  background-color: black;
-  color: white;
-  border: 1px solid white;
+  background-color: #11172B;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   border-radius: .9em;
   padding: 2em;
 }
@@ -17,7 +17,7 @@ label {
   font-size: 1.4em;
   padding: .3em;
   text-transform: uppercase;
-  color: white;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -27,7 +27,7 @@ textarea {
   line-height: 2em;
   width: 100%;
   outline: none;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: .5em;
   border-bottom: 2px solid gray;
@@ -73,16 +73,16 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   text-align: center;
-  color: white;
+  color: #ffffff;
 }
 
 button,
 .action-label {
   font-size: 1rem;
-  color: white;
+  color: #ffffff;
   font-weight: 500;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
   border-radius: .5em;
   text-transform: lowercase;
   padding: .5em;

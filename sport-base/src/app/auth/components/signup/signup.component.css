@@ -26,7 +26,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #11172B;
+  padding: 2em 3em;
 }
 
 label {

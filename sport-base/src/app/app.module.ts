@@ -3,10 +3,6 @@ import {NgModule} from '@angular/core';
 import {SharedModule} from "./shared/shared.module";
 import {CoreModule} from "./core/core.module";
 
-import {environment} from '../environments/environment';
-import {AngularFireModule} from 'angularfire2';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import {FlashMessagesModule} from 'angular2-flash-messages';
 
@@ -31,7 +27,7 @@ import {DashboardStore} from "./dashboard/services/dashboard-store";
     AppRoutingModule,
     SharedModule,
     CoreModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
   ],
 
   providers: [
