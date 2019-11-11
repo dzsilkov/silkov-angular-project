@@ -4,9 +4,7 @@ import {SportBase} from "../../models/sport-base";
 import {SportBasesService} from "../../services/sport-bases.service";
 
 
-@Injectable({
-  providedIn: "root"
-  })
+@Injectable()
 export class SportBaseDetailResolve implements Resolve<SportBase> {
   constructor(private baseService: SportBasesService) {}
 

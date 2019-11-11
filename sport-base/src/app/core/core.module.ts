@@ -10,6 +10,8 @@ import {FlashMessagesModule, FlashMessagesService} from "angular2-flash-messages
 import {ArticleStoreService} from "../articles/services/article-store.service";
 import {ArticleFirestoreService} from "../articles/services/article-firestore.service";
 import {ArticlesService} from "../articles/services/articles.service";
+import {AppStore} from "./services/app-store";
+import {UsersService} from "../auth/services/users.service";
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {ArticlesService} from "../articles/services/articles.service";
     FlashMessagesModule
   ],
   providers: [
+    AppStore,
     FlashMessagesService,
+    UsersService,
     ArticlesService,
     ArticleStoreService,
     ArticleFirestoreService

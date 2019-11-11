@@ -1,11 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Slide} from "../../models/slide";
 import {Observable} from "rxjs/internal/Observable";
 import {DashboardService} from "../../services/dashboard.service";
-import {concatMap, delay, repeat, tap} from "rxjs/operators";
+import {concatMap, delay, repeat, switchMap, tap} from "rxjs/operators";
 import {interval} from "rxjs/internal/observable/interval";
 import {of} from "rxjs/internal/observable/of";
 import {from} from "rxjs/internal/observable/from";
+import {AppStore} from "../../../core/services/app-store";
+import {Subscription} from "rxjs/internal/Subscription";
 
 @Component({
   selector: 'app-slider',
@@ -13,36 +15,26 @@ import {from} from "rxjs/internal/observable/from";
   styleUrls: ['./slider.component.css']
 })
 
-export class SliderComponent implements OnInit {
-  loading$: Observable<boolean>;
-  slides$: Observable<Slide[]>;
-  noResults$: Observable<boolean>;
+export class SliderComponent implements OnInit, OnDestroy {
+  // loading$: Observable<boolean>;
+  slides$;
+  // noResults$: Observable<boolean>;
   slides;
   slide;
+  subscription: Subscription;
 
   constructor(
-    private sliderService: DashboardService
+  private slidesService: DashboardService
   ) {}
 
   ngOnInit() {
-    this.loading$ = this.sliderService.loading$;
-    this.noResults$ = this.sliderService.noResults$;
-    this.sliderService.slides$.pipe(
-    ).subscribe(
-      slides => {
-        console.log('slide', slides);
-        this.slides = slides;
-        console.log('slides', this.slides);
-      }
-    );
+    this.slides$ = this.slidesService.slides$;
+    // this.subscription = this.sliderService.getSlides$.pipe(
+    //   tap(next => this.slides = next)
+    // ).subscribe();
+  }
 
-    this.slide =  from(this.slides).pipe(
-      concatMap(val => {
-        return of(val).pipe(
-          delay(4000)
-        )
-      }),
-      repeat()
-    )
+  ngOnDestroy() {
+    // this.subscription.unsubscribe();
   }
 }

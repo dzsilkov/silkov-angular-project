@@ -4,9 +4,23 @@
 <div *ngIf="noResults$ | async">
   No results
 </div>
-<button (click)="filterClear()" *ngIf="filtered">
-  clear filter
-</button>
+<section class="filter">
+  <form [formGroup]="sportsSelector">
+    <label for="sportSelect">Выбрать вид спорта</label>
+    <select formControlName="sports"
+            id="sportSelect">
+      <option value="">All Sports</option>
+      <option
+        *ngFor="let sport of sports$ | async"
+        [value]="sport">
+        {{ sport }}
+      </option>
+    </select>
+    <button (click)="filterClear()" *ngIf="filtered">
+      clear filter
+    </button>
+  </form>
+</section>
 <h2 class="title">Каталог</h2>
 <div *ngIf="sportBases$ | async; let sportBases; else loading">
   <div class="catalog">

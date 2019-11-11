@@ -7,7 +7,6 @@ import {AddSportBaseComponent} from "../components/add-sport-base/add-sport-base
 import {SportBaseDetailComponent} from "../components/sport-base-detail/sport-base-detail.component";
 import {SearchSportBaseComponent} from "../components/search-sport-base/search-sport-base.component";
 import {SportBasesAppComponent} from "../components/sport-bases-app/sport-bases-app.component";
-import {SportBaseDetailResolve} from "../components/sport-base-detail/sport-base-detail-resolve";
 
 export const sportBasesRoutes: Routes = [
   {

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../../auth/services/user.service";
 import {ArticlesService} from "../../../articles/services/articles.service";
+import {AppStore} from "../../../core/services/app-store";
 
 @Component({
   selector: 'app-loading-spinner',
@@ -9,19 +9,21 @@ import {ArticlesService} from "../../../articles/services/articles.service";
 })
 export class LoadingSpinnerComponent implements OnInit {
 
-  active: boolean;
+  active;
 
   constructor(
-    private userService: UserService,
-    private baseService: UserService,
-    private articleService: ArticlesService,
+    private store: AppStore,
   ) {
   }
 
   ngOnInit() {
-    this.userService.loading$.subscribe(data => this.active = data);
-    this.baseService.loading$.subscribe(data => this.active = data);
-    this.articleService.loading$.subscribe(data => this.active = data);
+   this.active = this.store.select('loading');
+    // this.subscription = this.sliderService.getSlides$.pipe(
+    //   tap(next => this.slides = next)
+    // ).subscribe();
+    // this.userService.loading$.subscribe(data => this.active = data);
+    // this.baseService.loading$.subscribe(data => this.active = data);
+    // this.articleService.loading$.subscribe(data => this.active = data);
   }
 
 }

@@ -93,6 +93,6 @@ export class AddSportBaseComponent implements OnInit {
     const newBase: SportBase = this.formAddSportBase.value;
     this.baseService.newSportBase(newBase);
     this.formAddSportBase.reset();
-    this.router.navigate([`catalog`]);
+    this.router.navigate([`/catalog`]);
   }
 }

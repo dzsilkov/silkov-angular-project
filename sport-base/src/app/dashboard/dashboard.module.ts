@@ -7,6 +7,7 @@ import {SliderComponent} from "./components/slider/slider.component";
 import {SliderPaginationComponent} from "./components/slider-pagination/slider-pagination.component";
 import {SliderControlComponent} from "./components/slider-control/slider-control.component";
 import {SlideComponent} from "./components/slide/slide.component";
+import {DashboardService} from "./services/dashboard.service";
 
 
 @NgModule({
@@ -21,6 +22,9 @@ import {SlideComponent} from "./components/slide/slide.component";
   imports: [
     CommonModule,
     DashboardRoutingModule
+  ],
+  providers: [
+    DashboardService
   ]
 })
 export class DashboardModule {

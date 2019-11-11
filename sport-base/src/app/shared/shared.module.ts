@@ -7,7 +7,6 @@ import {LoadingSpinnerComponent} from "./components/loading-spinner/loading-spin
 import {FooterComponent} from "./components/footer/footer.component";
 import {TitleComponent} from "./components/title/title.component";
 import {AuthService} from "../auth/services/auth.service";
-import {UserService} from "../auth/services/user.service";
 import {HeaderComponent} from "./components/header/header.component";
 import {NavigationComponent} from "./components/navigation/navigation.component";
 import {BreadcrumbComponent} from "./components/breadcrumb/breadcrumb.component";
@@ -44,7 +43,6 @@ import {FlashMessagesModule} from "angular2-flash-messages";
   ],
   providers: [
     AuthService,
-    UserService,
   ],
 
 })

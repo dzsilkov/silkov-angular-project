@@ -1,14 +1,17 @@
 <div class="slide__img">
-  <img [src]="slide.img" alt="">
+  <img [src]="slide" alt="">
 </div>
 <div class="slide__content">
-  <h2 class="slide__header">{{slide.title}}</h2>
-  <p class="slide__description">{{slide.description}}</p>
-  <a class="slide__action">Побробнее</a>
+  <h2 class="slide__header">Спортивные Базы</h2>
+  <p class="slide__description">Более 20 видов спорта</p>
+  <a class="slide__action"
+     [routerLink]="'/catalog'"
+  >Побробнее</a>
 </div>
 <div class="slide__overlay">
   <svg viewBox="0 0 720 405" preserveAspectRatio="none">
     <path d="M0,0 170,0 520,405 0,405"/>
   </svg>
 </div>
+
 
