@@ -4,7 +4,9 @@ import {Article} from '../../models/article';
 import {ArticlesService} from '../../services/articles.service';
 import {Observable} from "rxjs/internal/Observable";
 import {ActivatedRoute, Router} from "@angular/router";
-import {SportBasesService} from "../../../sport-base/services/sport-bases.service";
+import {tap} from "rxjs/operators";
+import {AppStore} from "../../../core/services/app-store";
+import {Subscription} from "rxjs/internal/Subscription";
 
 @Component({
   selector: 'app-articles-catalog',
@@ -18,17 +20,16 @@ export class ArticlesCatalogComponent implements OnInit {
   articles$: Observable<Article[]>;
   noResults$: Observable<boolean>;
 
-
   constructor(
-    private articlesService: ArticlesService,
-    private router: Router,
-    private route: ActivatedRoute,
+    private store: AppStore,
+    private articlesService: ArticlesService
   ) {
   }
 
   ngOnInit() {
-    this.loading$ = this.articlesService.loading$;
-    this.noResults$ = this.articlesService.noResults$;
     this.articles$ = this.articlesService.articles$;
+    // this.loading$ = this.articlesService.loading$;
+    // this.noResults$ = this.articlesService.noResults$;
+    // this.articles$ = this.articlesService.articles$;
   }
 }

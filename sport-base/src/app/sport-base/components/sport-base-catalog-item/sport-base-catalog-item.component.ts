@@ -23,8 +23,4 @@ export class SportBaseCatalogItemComponent {
   filterByRegion(region) {
     this.filterRegion.emit(region);
   }
-
-  click(id) {
-    console.log(id)
-  }
 }

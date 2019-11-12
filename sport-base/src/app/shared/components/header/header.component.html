@@ -14,21 +14,21 @@
     </div>
     <div class="toolbar-actions">
       <ul class="toolbar-actions-items">
-        <li *ngIf="!isLoggedIn">
+        <li *ngIf="isLoggedOut$ | async">
           <a routerLink="/auth/signup" class="nav-link">
             sign up
           </a>
         </li>
-        <li *ngIf="!isLoggedIn">
+        <li *ngIf="isLoggedOut$ | async">
           <a routerLink="/auth/login" class="nav-link">
             log in
           </a>
         </li>
-        <li *ngIf="isLoggedIn" class="nav-item">
+        <li *ngIf="isLoggedIn$ | async" class="nav-item">
           <span>Active User: </span>
           <a routerLink="/auth/user" class="nav-link nav-link-user" >{{ (activeUser$ | async).firstName }}</a>
         </li>
-        <li *ngIf="isLoggedIn">
+        <li *ngIf="isLoggedIn$ | async">
           <a href="#" (click)="logoutClick($event)" class="nav-link">Logout</a>
         </li>
         <li>

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../services/user.service";
 import {User} from "../../models/user";
 import {Observable} from "rxjs/internal/Observable";
+import {UsersService} from "../../services/users.service";
 
 @Component({
   selector: 'app-user',
@@ -14,13 +14,13 @@ export class UserComponent implements OnInit {
   activeUser$: Observable<User | any>;
 
   constructor(
-    private userService: UserService
+    private userService: UsersService
   ) {
   }
 
   ngOnInit() {
-    this.loading$ = this.userService.loading$;
-    this.noResults$ = this.userService.noResults$;
+    // this.loading$ = this.userService.loading$;
+    // this.noResults$ = this.userService.noResults$;
     this.activeUser$ = this.userService.activeUser$;
   }
 }

@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {promise} from "selenium-webdriver";
 import {map} from "rxjs/operators";
 
 @Injectable()
@@ -33,4 +32,7 @@ export class AuthService {
   signOut() {
     return this.afAuth.auth.signOut();
   }
+
+
+
 }

@@ -1,5 +1,6 @@
 <div class="slider">
-  <app-slide [slide]="(slide | async)"></app-slide>
+  <app-slide></app-slide>
   <!--<app-slider-control></app-slider-control>-->
-  <app-slider-pagination [slides]="slides"></app-slider-pagination>
+  <app-slider-pagination [slides]="slides$ | async"></app-slider-pagination>
 </div>
+

@@ -13,7 +13,6 @@ import {UserComponent} from "./components/user/user.component";
 import {AuthService} from "./services/auth.service";
 import {UserFirestoreService} from "./services/user-firestore.service";
 import {UserStoreService} from "./services/user-store.service";
-import {UserService} from "./services/user.service";
 
 
 @NgModule({
@@ -35,7 +34,6 @@ import {UserService} from "./services/user.service";
 
   providers: [
     AuthService,
-    UserService,
     UserFirestoreService,
     UserStoreService,
   ]

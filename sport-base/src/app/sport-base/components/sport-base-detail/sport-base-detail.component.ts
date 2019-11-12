@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, ParamMap, Params, Router} from "@angular/router";
-import {delay, map, pluck, switchMap, tap} from "rxjs/operators";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {switchMap} from "rxjs/operators";
 import {SportBase} from "../../models/sport-base";
 import {Observable} from "rxjs/internal/Observable";
 import {SportBasesService} from "../../services/sport-bases.service";
@@ -15,9 +15,7 @@ export class SportBaseDetailComponent implements OnInit {
 
   loading$: Observable<boolean>;
   sportBase$;
-  // noResults$: Observable<boolean>;
-  sports$: Observable<string[]>;
-  images$: Observable<string[]>;
+  noResults$: Observable<boolean>;
 
   sportBase: SportBase;
   review: boolean = false;
